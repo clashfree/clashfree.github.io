@@ -1,4 +1,4 @@
-# 7月5日 | 最新SSR/Shadowrocket/V2ray/Clash高速免费节点，最高速度20.7M/S  更新时间 2024-07-05 10:55:31
+# 7月6日 | 最新Shadowrocket/V2ray/SSR/Clash高速免费节点，最高速度22.6M/S  更新时间 2024-07-06 11:29:56
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://clashfree.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,19 +9,19 @@
 
 ### Clash订阅链接
 
-- https://clashfree.github.io/uploads/2024/07/0-20240705.yaml
-- https://clashfree.github.io/uploads/2024/07/1-20240705.yaml
-- https://clashfree.github.io/uploads/2024/07/2-20240705.yaml
-- https://clashfree.github.io/uploads/2024/07/3-20240705.yaml
-- https://clashfree.github.io/uploads/2024/07/4-20240705.yml
+- https://clashfree.github.io/uploads/2024/07/0-20240706.yaml
+- https://clashfree.github.io/uploads/2024/07/1-20240706.yaml
+- https://clashfree.github.io/uploads/2024/07/2-20240706.yaml
+- https://clashfree.github.io/uploads/2024/07/3-20240706.yaml
+- https://clashfree.github.io/uploads/2024/07/4-20240706.yml
 
 ### V2ray订阅链接
 
-- https://clashfree.github.io/uploads/2024/07/0-20240705.txt
-- https://clashfree.github.io/uploads/2024/07/1-20240705.txt
-- https://clashfree.github.io/uploads/2024/07/2-20240705.txt
-- https://clashfree.github.io/uploads/2024/07/3-20240705.txt
-- https://clashfree.github.io/uploads/2024/07/4-20240705.txt
+- https://clashfree.github.io/uploads/2024/07/0-20240706.txt
+- https://clashfree.github.io/uploads/2024/07/1-20240706.txt
+- https://clashfree.github.io/uploads/2024/07/2-20240706.txt
+- https://clashfree.github.io/uploads/2024/07/3-20240706.txt
+- https://clashfree.github.io/uploads/2024/07/4-20240706.txt
 
 ## 更多clash节点订阅 ：
 
