@@ -1,4 +1,4 @@
-# 11月9日 | 最新V2ray/Clash/SSR/Shadowrocket高速免费节点，最高速度20.1M/S，便宜机场推荐  更新时间 2024-11-09 09:35:44
+# 11月10日 | 最新Shadowrocket/SSR/Clash/V2ray高速免费节点，最高速度21.5M/S，便宜机场推荐  更新时间 2024-11-10 10:07:45
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://clashfree.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,19 +9,19 @@
 
 ### Clash订阅链接
 
-- https://clashfree.github.io/uploads/2024/11/0-20241109.yaml
-- https://clashfree.github.io/uploads/2024/11/1-20241109.yaml
-- https://clashfree.github.io/uploads/2024/11/2-20241109.yaml
-- https://clashfree.github.io/uploads/2024/11/3-20241109.yaml
-- https://clashfree.github.io/uploads/2024/11/4-20241109.yml
+- https://clashfree.github.io/uploads/2024/11/0-20241110.yaml
+- https://clashfree.github.io/uploads/2024/11/1-20241110.yaml
+- https://clashfree.github.io/uploads/2024/11/2-20241110.yaml
+- https://clashfree.github.io/uploads/2024/11/3-20241110.yaml
+- https://clashfree.github.io/uploads/2024/11/4-20241110.yml
 
 ### V2ray订阅链接
 
-- https://clashfree.github.io/uploads/2024/11/0-20241109.txt
-- https://clashfree.github.io/uploads/2024/11/1-20241109.txt
-- https://clashfree.github.io/uploads/2024/11/2-20241109.txt
-- https://clashfree.github.io/uploads/2024/11/3-20241109.txt
-- https://clashfree.github.io/uploads/2024/11/4-20241109.txt
+- https://clashfree.github.io/uploads/2024/11/0-20241110.txt
+- https://clashfree.github.io/uploads/2024/11/1-20241110.txt
+- https://clashfree.github.io/uploads/2024/11/2-20241110.txt
+- https://clashfree.github.io/uploads/2024/11/3-20241110.txt
+- https://clashfree.github.io/uploads/2024/11/4-20241110.txt
 
 ## 更多clash节点订阅 ：
 
