@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="canonical" href="https://clashfree.github.io/news/article-30181.htm" />
+<link rel="icon" href="/assets/website/img/clashfree/favicon.ico" type="image/x-icon"/>
+<title>springboot集成Elasticsearch实现各种搜索功能</title>
+<meta name="description" content="springboot集成Elasticsearch各类搜索功能实现    springboot集成Elasticsearch使用completion suggest实现自动关键字补全   建立学生的索" />
+<link rel="stylesheet" href="/assets/website/css/clashfree/style-starter.css">
+<link href="https://fonts.googleapis.com/css?family=Josefin+Slab:400,700,700i&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FVS49PB05G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FVS49PB05G');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body id="home" data-page="detail">
+    <section class=" w3l-header-4 header-sticky">
+    <header class="absolute-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                                <a class="navbar-brand" href="/">
+                        Clash Free
+                    </a>
+                                <button class="navbar-toggler bg-gradient collapsed" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="fa icon-expand fa-bars"></span>
+                    <span class="fa icon-close fa-times"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="#">关于</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">联系</a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+        </nav>
+        </div>
+    </header>
+</section>
+<script src="/assets/website/js/frontend/clashfree/jquery-3.5.1.min.js"></script> <!-- Common jquery plugin -->
+<!--bootstrap working-->
+<script src="/assets/website/js/frontend/clashfree/bootstrap.min.js"></script>
+<!-- //bootstrap working-->
+<!-- disable body scroll which navbar is in active -->
+<script>
+$(function() {
+    $('.navbar-toggler').click(function() {
+        $('body').toggleClass('noscroll');
+    })
+});
+</script>
+    <!-- breadcrumbs -->
+    <section class="w3l-inner-banner-main">
+        <div class="about-inner about ">
+            <div class="container">
+                <div class="main-titles-head text-center">
+                    <h1 class="header-name" style="word-break: break-all;">
+                        springboot集成Elasticsearch实现各种搜索功能                    </h1>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="breadcrumbs-sub">
+            <div class="container">
+                <ul class="breadcrumbs-custom-path">
+                    <li class="right-side propClone"><a href="/" class="">首页 <span class="fa fa-angle-right" aria-hidden="true"></span></a>
+                        <p>
+                    </li>
+                    <li class="right-side propClone"><a href="/news/" class="">新闻资讯 <span class="fa fa-angle-right" aria-hidden="true"></span></a>
+                        <p>
+                    </li>
+                    <li class="active ">正文</li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- breadcrumbs //-->
+    <section class="w3l-content-with-photo-4" id="about">
+        <div class="content-with-photo4-block ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <div class="toc"> <h3>springboot集成Elasticsearch各类搜索功能实现</h3> <ul> <li> <ul> <li><a href="#springbootElasticsearchcompletion_suggest_11" rel="nofollow">springboot集成Elasticsearch使用completion suggest实现自动关键字补全</a></li> <li> <ul> <li><a href="#_89" rel="nofollow">建立学生的索引和映射：</a></li> <li><a href="#_147" rel="nofollow">开始测试：</a></li> <li><a href="#suggest_190" rel="nofollow">接下来是实现获取suggest的代码：</a></li> <li><a href="#_318" rel="nofollow">前端代码</a></li> </ul> </li> <li><a href="#Fuzzy_361" rel="nofollow">实现Fuzzy模糊查询</a></li> <li> <ul> <li><a href="#esFuzzy_365" rel="nofollow">es中的Fuzzy查询语句示例</a></li> <li><a href="#JavaFuzzy_385" rel="nofollow">Java实现Fuzzy和高亮返回</a></li> </ul> </li> <li><a href="#_445" rel="nofollow">数组元素查询</a></li> <li><a href="#Elasticsearch_449" rel="nofollow">Elasticsearch许可证过期</a></li> </ul> </li> </ul> </div> <p>环境准备：<br /> Elasticsearch服务器<br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/wangxudongx/article/details/87213463"  rel="nofollow">ik中文分词器</a><br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/wangxudongx/article/details/87268384"  rel="nofollow">Kibana服务</a><br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/wangxudongx/article/details/87214397"  rel="nofollow">一个集成了ES的springboot项目</a></p> <p>博主环境：<br /> es:6.2.2 Kibana:6.2.2 springboot:2.1.2</p> <h2><a id="springbootElasticsearchcompletion_suggest_11" rel="nofollow"></a>springboot集成Elasticsearch使用completion suggest实现自动关键字补全</h2> <p>定义成completion的字段无法应用highlight返回。</p> <p>实现目标：建立学生数据索引，以学生姓名为搜索自动补全字段。<br /> 学生实体类：</p> <pre><code>@Document(indexName = "student_index",type="student") public class Student implements Serializable {     @Id     @Field(type= FieldType.Auto)     private String studentId;      @Override     public String toString() {         return "Student{" +                 "studentId='" + studentId + '\'' +                 ", name='" + name + '\'' +                 ", age=" + age +                 ", scores=" + scores +                 '}';     }      public Student(String studentId, String name, Integer age, List&lt;Double&gt; scores) {         this.studentId = studentId;         this.name = name;         this.age = age;         this.scores = scores;     }      public Student() {      }      public String getStudentId() {          return studentId;     }      public void setStudentId(String studentId) {         this.studentId = studentId;     }      public String getName() {         return name;     }      public void setName(String name) {         this.name = name;     }      public Integer getAge() {         return age;     }      public void setAge(Integer age) {         this.age = age;     }      public List&lt;Double&gt; getScores() {         return scores;     }      public void setScores(List&lt;Double&gt; scores) {         this.scores = scores;     }      @Field(type=FieldType.Auto)     private String name;      @Field(type=FieldType.Auto)     private Integer age;      @Field(type=FieldType.Auto)     private List&lt;Double&gt; scores; }</code></pre> <h3><a id="_89" rel="nofollow"></a>建立学生的索引和映射：</h3> <p>待搜索的字段需要设置为Completion类型</p> <pre><code>PUT /student_index {    "mappings": {      "student" : {        "properties" : {          "name" : {            "type" :    "completion",            "analyzer": "ik_smart"          },          "age" : {            "type" :   "integer"          },                  "studentId" : {            "type" :   "text"          },                  "scores":{           "type" :  "float"                    }               }      }    }  }</code></pre> <p>整点数据测试一下：</p> <p>学生索引Repository类：</p> <pre><code>@Repository public interface StudentRepository extends ElasticsearchCrudRepository&lt;Student,String&gt;{ }</code></pre> <h3><a id="_147" rel="nofollow"></a>开始测试：</h3> <p>在程序里插入一些数据；</p> <pre><code>@Autowired 	private ElasticsearchTemplate elasticsearchTemplate; 	@Test 	public void contextLoads() {  		List scores= new ArrayList&lt;&gt;(); 		scores.add(67.2); 		scores.add(27.2); 		scores.add(56.2);  /*		studentIndexRepository.save(new Student(UUID.randomUUID().toString(), "张三", 21, scores )); 		studentIndexRepository.save(new Student(UUID.randomUUID().toString(), "李四", 35, scores )); 		studentIndexRepository.save(new Student(UUID.randomUUID().toString(), "王二", 45, scores )); 		studentIndexRepository.save(new Student(UUID.randomUUID().toString(), "张大林", 23, scores )); 		studentIndexRepository.save(new Student(UUID.randomUUID().toString(), "王大力", 51, scores ));*/  		studentIndexRepository.save(new Student(UUID.randomUUID().toString(), "刘伯", 21, scores )); 		studentIndexRepository.save(new Student(UUID.randomUUID().toString(), "刘思想", 35, scores )); 		studentIndexRepository.save(new Student(UUID.randomUUID().toString(), "王皮皮", 45, scores )); 		studentIndexRepository.save(new Student(UUID.randomUUID().toString(), "王二丫", 23, scores )); 		studentIndexRepository.save(new Student(UUID.randomUUID().toString(), "王铁蛋", 51, scores )); 	}</code></pre> <p>在Kibana测试</p> <pre><code>POST /student_index/completion/_search { "size": 0,   "suggest": {     "name-suggest": {       "prefix": "王二",       "completion": {         "field": "name"       }     }   } }</code></pre> <p>结果正确：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220602/ab6e838b33915775974df47d91375501.jpg" alt="springboot集成Elasticsearch实现各种搜索功能"></p> <h3><a id="suggest_190" rel="nofollow"></a>接下来是实现获取suggest的代码：</h3> <p>测试方法</p> <pre><code>	@Test 	public void testSuggestCompletionProc() {  		String suggestField="name";//指定在哪个字段搜索 		String suggestValue="王二";//输入的信息 		Integer suggestMaxCount=10;//获得最大suggest条数  		CompletionSuggestionBuilder suggestionBuilderDistrict = new CompletionSuggestionBuilder(suggestField).prefix(suggestValue).size(suggestMaxCount); 		SuggestBuilder suggestBuilder = new SuggestBuilder(); 		suggestBuilder.addSuggestion("student_suggest", suggestionBuilderDistrict);//添加suggest  		//设置查询builder的index,type,以及建议 		SearchRequestBuilder requestBuilder = this.elasticsearchTemplate.getClient().prepareSearch("student_index").setTypes("student").suggest(suggestBuilder); 		System.out.println(requestBuilder.toString());  		SearchResponse response = requestBuilder.get(); 		Suggest suggest = response.getSuggest();//suggest实体  		Set&lt;String&gt; suggestSet = new HashSet&lt;&gt;();//set 		int maxSuggest = 0; 		if (suggest != null) { 			Suggest.Suggestion result = suggest.getSuggestion("student_suggest");//获取suggest,name任意string 			for (Object term : result.getEntries()) {  				if (term instanceof CompletionSuggestion.Entry) { 					CompletionSuggestion.Entry item = (CompletionSuggestion.Entry) term; 					if (!item.getOptions().isEmpty()) { 						//若item的option不为空,循环遍历 						for (CompletionSuggestion.Entry.Option option : item.getOptions()) { 							String tip = option.getText().toString(); 							if (!suggestSet.contains(tip)) { 								suggestSet.add(tip); 								++maxSuggest; 							} 						} 					} 				} 				if (maxSuggest &gt;= suggestMaxCount) { 					break; 				} 			} 		}  		List&lt;String&gt; suggests = Arrays.asList(suggestSet.toArray(new String[]{}));  		suggests.forEach((s)-&gt;{ 			System.out.println(s); 		});  //		return	 suggests;  	}</code></pre> <p>输出结果正确：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220602/ee1cbeab7bcb6334581fc1b4b736aa17.jpg" alt="springboot集成Elasticsearch实现各种搜索功能"><br /> 封装的工具方法</p> <pre><code>    /**      * completion suggest      * @param suggestField      * @param suggestValue      * @param suggestMaxCount      * @param index_      * @param indexType_      * @param elasticsearchTemplate__      * @return      */     public List&lt;String&gt; listSuggestCompletion(String suggestField, String suggestValue, Integer suggestMaxCount,String index_,String indexType_,ElasticsearchTemplate elasticsearchTemplate__) {         /* String suggestField="name";//指定在哪个字段搜索         String suggestValue="王二";//输入的信息         Integer suggestMaxCount=10;//获得最大suggest条数*/          CompletionSuggestionBuilder suggestionBuilderDistrict = new CompletionSuggestionBuilder(suggestField).prefix(suggestValue).size(suggestMaxCount);         SuggestBuilder suggestBuilder = new SuggestBuilder();         suggestBuilder.addSuggestion("student_suggest", suggestionBuilderDistrict);//添加suggest          //设置查询builder的index,type,以及建议         if(elasticsearchTemplate__==null)             System.out.println( "this is Template null  ***************************************************");         SearchRequestBuilder requestBuilder = elasticsearchTemplate__.getClient().prepareSearch(index_).setTypes(indexType_).suggest(suggestBuilder);         System.out.println(requestBuilder.toString());          SearchResponse response = requestBuilder.get();         Suggest suggest = response.getSuggest();//suggest实体          Set&lt;String&gt; suggestSet = new HashSet&lt;&gt;();//set         int maxSuggest = 0;         if (suggest != null) {             Suggest.Suggestion result = suggest.getSuggestion("student_suggest");//获取suggest,name任意string             for (Object term : result.getEntries()) {                  if (term instanceof CompletionSuggestion.Entry) {                     CompletionSuggestion.Entry item = (CompletionSuggestion.Entry) term;                     if (!item.getOptions().isEmpty()) {                         //若item的option不为空,循环遍历                         for (CompletionSuggestion.Entry.Option option : item.getOptions()) {                             String tip = option.getText().toString();                             if (!suggestSet.contains(tip)) {                                 suggestSet.add(tip);                                 ++maxSuggest;                             }                         }                     }                 }                 if (maxSuggest &gt;= suggestMaxCount) {                     break;                 }             }         }          List&lt;String&gt; suggests = Arrays.asList(suggestSet.toArray(new String[]{}));          suggests.forEach((s)-&gt;{             System.out.println(s);         });  		return	 suggests;      }</code></pre> <h3><a id="_318" rel="nofollow"></a>前端代码</h3> <p>前端自动补全用JqueryUI的autocomplete组件。</p> <pre><code>&lt;script&gt;      var availableTags = new Array();      $(function() {          $("#tags").autocomplete({             source: availableTags          });     });      $(document).ready(function() {         $("#tags").bind("input propertychange", function () {             $("#valuetext").html($(this).val());             $.get("searchSuggest?value="+$(this).val(), function (data, status) {                 var results=data;                 for(var i=0;i&lt;results.length;i++){                     availableTags[i]=results[i].texts;                 }                  $("#tags").autocomplete({                     source: availableTags                  });             });         });     }) &lt;/script&gt;  &lt;!-- 标签 --&gt;             &lt;input type="search" id="tags" name="searchvalue" class="form-control" style="border-radius: 50px 0 0 50px;" placeholder="请搜索.."&gt;</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220602/0ec89142ea2c5b957112f06e7892b8ea.jpg" alt="springboot集成Elasticsearch实现各种搜索功能"></p> <hr/> <h2><a id="Fuzzy_361" rel="nofollow"></a>实现Fuzzy模糊查询</h2> <p>Fuzzy有纠错功能<br /> 应用Fuzzy查询的字段需要是 text 类型的。</p> <h3><a id="esFuzzy_365" rel="nofollow"></a>es中的Fuzzy查询语句示例</h3> <pre><code>GET /indextest/testmapping/_search/ {   "query": {     "fuzzy": {       "namePinyin": {         "value": "zhonghuarenmingonghegu"       }      }    } ,   "highlight" :{     "fields": {       "namePinyin" :{}     }   } }</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220602/4cf3e51cb07104fc616a09da2798b4e2.jpg" alt="springboot集成Elasticsearch实现各种搜索功能"></p> <h3><a id="JavaFuzzy_385" rel="nofollow"></a>Java实现Fuzzy和高亮返回</h3> <pre><code>    /**      * 拼音Fuzzy查询      * @param field      * @param value      * @param highlightField      * @param preTag      * @param postTag      * @param index      * @param indexType      * @param elasticsearchTemplate      * @return      */     public List&lt;String&gt; listSearchByPinyin(String field,String value,String highlightField ,String preTag,String postTag,String index, String indexType , ElasticsearchTemplate elasticsearchTemplate){          List&lt;String&gt; result = new LinkedList&lt;&gt;();          FuzzyQueryBuilder queryBuilder = QueryBuilders.fuzzyQuery(field, value)                 .fuzziness(Fuzziness.TWO)                 .prefixLength(0)                 .maxExpansions(10);         HighlightBuilder highlightBuilder = new HighlightBuilder();         highlightBuilder.field(highlightField);         highlightBuilder.preTags(preTag);         highlightBuilder.postTags(postTag);          SearchRequestBuilder requestBuilder = elasticsearchTemplate.getClient().prepareSearch(index)                 .setTypes(indexType)                 .setQuery(queryBuilder)                 .highlighter(highlightBuilder);           SearchResponse response = requestBuilder.get();          System.out.println(response.getClusters().toString());          System.out.println(requestBuilder.toString());          SearchHits searchHits = response.getHits();          searchHits.forEach(i-&gt;{             System.out.println(i.getIndex());             System.out.println(i.getId());             System.out.println(i.getSourceAsString());               Text highlightFragment = i.getHighlightFields().get(highlightField).getFragments()[0];              result.add(highlightFragment.toString());              System.out.println();          });           return result;     }</code></pre> <h2><a id="_445" rel="nofollow"></a>数组元素查询</h2> <p>这个可以用作标签查询、定位。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220602/8d70e731a823bb7bb8e67537abbebe67.jpg" alt="springboot集成Elasticsearch实现各种搜索功能"></p> <h2><a id="Elasticsearch_449" rel="nofollow"></a>Elasticsearch许可证过期</h2> <p>elasticsearch报日志：</p> <blockquote> <p>org.elasticsearch.ElasticsearchSecurityException: current license is<br /> non-compliant for [security]</p> </blockquote> <p>替换许可证</p> <p>到elastic**<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://register.elastic.co/"  rel="nofollow">官网</a>**<code>https://register.elastic.co/</code>注册一下账号，注册邮箱会收到许可证文件<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220602/56dac0da64654db739663c16ba91fa97.jpg" alt="springboot集成Elasticsearch实现各种搜索功能"><br /> 将许可证放到服务器下，用的docker要进入到es容器内，重命名许可证文件名为：<code>license.json</code></p> <pre><code class="prism language-c"><span class="token macro property"># curl -XPUT -u elastic:yourregistername 'http://133.3.269.211:9200/_xpack/license?acknowledge=true' -H "Content-Type: application/json" -d @license.json</span></code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220602/e82bde90994b2a3383dee7326a8de14d.jpg" alt="springboot集成Elasticsearch实现各种搜索功能"><br /> 这样就ok了。</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-30080.htm">宠物用品（宠物用品市场调研报告）</a></p>
+                                        <p>下一个：<a href="/news/article-30182.htm">哈尔滨王允海宠物医院怎么样呀多少钱啊（王允海动物医院道里店怎么样）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-19539.htm" title="中国知名兽药（中国知名兽药公司排名）">中国知名兽药（中国知名兽药公司排名）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-4-26-node-share.htm" title="4月26日 | 最新SSR/V2ray/Clash/Shadowrocket高速免费节点，最高速度22.6M/S">4月26日 | 最新SSR/V2ray/Clash/Shadowrocket高速免费节点，最高速度22.6M/S</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-27-free-v2ray.htm" title="10月27日 | 最新Clash/SSR/Shadowrocket/V2ray高速免费节点，最高速度21.7M/S，便宜机场推荐">10月27日 | 最新Clash/SSR/Shadowrocket/V2ray高速免费节点，最高速度21.7M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-21-shadowrocket-node.htm" title="7月21日 | 最新SSR/V2ray/Shadowrocket/Clash高速免费节点，最高速度20.6M/S">7月21日 | 最新SSR/V2ray/Shadowrocket/Clash高速免费节点，最高速度20.6M/S</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-16-free-shadowrocket-node.htm" title="7月16日 | 最新SSR/Clash/V2ray/Shadowrocket高速免费节点，最高速度19.4M/S">7月16日 | 最新SSR/Clash/V2ray/Shadowrocket高速免费节点，最高速度19.4M/S</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-30-free-node-subscribe.htm" title="8月30日 | 最新V2ray/SSR/Shadowrocket/Clash高速免费节点，最高速度21.9M/S">8月30日 | 最新V2ray/SSR/Shadowrocket/Clash高速免费节点，最高速度21.9M/S</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-11-free-ssr-subscribe.htm" title="11月11日 | 最新Shadowrocket/SSR/V2ray/Clash高速免费节点，最高速度19.5M/S，便宜机场推荐">11月11日 | 最新Shadowrocket/SSR/V2ray/Clash高速免费节点，最高速度19.5M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-3-4-free-ssr-subscribe.htm" title="3月4日22.1M/S|SSR/Shadowrocket/Clash/V2ray免费节点每天更新订阅链接">3月4日22.1M/S|SSR/Shadowrocket/Clash/V2ray免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-6-8-free-v2ray-subscribe.htm" title="6月8日 | 最新V2ray/SSR/Clash/Shadowrocket高速免费节点，最高速度20.9M/S">6月8日 | 最新V2ray/SSR/Clash/Shadowrocket高速免费节点，最高速度20.9M/S</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-23-clash-node.htm" title="12月23日 | 最新V2ray/SSR/Clash/Shadowrocket高速免费节点地址，最高速度20.7M/S，便宜机场推荐">12月23日 | 最新V2ray/SSR/Clash/Shadowrocket高速免费节点地址，最高速度20.7M/S，便宜机场推荐</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">72</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    </section>
+    
+        <section class="w3l-footer-29-main w3l-copyright">
+        <div class="container">
+            <div class="row bottom-copies">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                <p class="col-lg-8 copy-footer-29">
+                    ClashFree节点免费订阅站 版权所有
+                    <br />
+                    Powered by WordPress
+                </p>
+                <div class="col-lg-4 main-social-footer-29">
+                    <a href="#facebook" class="facebook"><span class="fa fa-facebook"></span></a>
+                    <a href="#twitter" class="twitter"><span class="fa fa-twitter"></span></a>
+                    <a href="#instagram" class="instagram"><span class="fa fa-instagram"></span></a>
+                    <a href="#linkedin" class="linkedin"><span class="fa fa-linkedin"></span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- move top -->
+    <button onclick="topFunction()" id="movetop" title="Go to top">
+        <span class="fa fa-long-arrow-up"></span>
+    </button>
+    <script>
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("movetop").style.display = "block";
+        } else {
+            document.getElementById("movetop").style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    </script>
+    <!-- /move top -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
