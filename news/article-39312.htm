@@ -5,10 +5,10 @@
     <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="canonical" href="https://clashfree.github.io/news/article-38819.htm" />
+<link rel="canonical" href="https://clashfree.github.io/news/article-39312.htm" />
 <link rel="icon" href="/assets/website/img/clashfree/favicon.ico" type="image/x-icon"/>
-<title>经典汉诺塔（Java实现）</title>
-<meta name="description" content="题目要求 1.利用递归实现汉诺塔。 2.可以输入首次想要的层数与停止层数，当遇到停止层数时，停止输出。 package Hanoi; import java.util.*; public class " />
+<title>JavaScript如何将字符串的字母映射到数组的对象</title>
+<meta name="description" content="给定一个字符串，我们需要编写一个函数来创建一个对象，该对象将每个字母的索引存储在数组中。字符串的字母（元素）必须是对象的键 索引应存储在数组中，并且这些数组是值。 例如- 如果输入字符串是- cons" />
 <link rel="stylesheet" href="/assets/website/css/clashfree/style-starter.css">
 <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:400,700,700i&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
@@ -83,7 +83,7 @@ $(function() {
             <div class="container">
                 <div class="main-titles-head text-center">
                     <h1 class="header-name" style="word-break: break-all;">
-                        经典汉诺塔（Java实现）                    </h1>
+                        JavaScript如何将字符串的字母映射到数组的对象                    </h1>
                     
                 </div>
             </div>
@@ -110,10 +110,10 @@ $(function() {
                 <div class="row">
                     <div class="col-md-9">
                                         <input type="hidden" id="share-website-info" data-name="" data-url="">
-                  				  				  				<div id="content_views" class="htmledit_views"> <p>题目要求</p> <p>1.利用递归实现汉诺塔。</p> <p>2.可以输入首次想要的层数与停止层数，当遇到停止层数时，停止输出。</p> <pre><code class="language-java">package Hanoi; import java.util.*; public class Hanoi { &nbsp;&nbsp; &nbsp;static int i = 1; public static void Hanoi(int n,char X,char Y,char Z) { &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if(n==1) // 只有一个盘片的情况 &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{ &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.printf("第%d次移动:%d号圆盘，%c--&gt;%c\n",i,n,X,Z); &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;i++; //次数＋1 &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;} &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;else { &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Hanoi(n-1,X,Z,Y); &nbsp;// 有两个或者多个盘片的情况 &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.printf("第%d次移动:%d号圆盘，%c--&gt;%c\n",i,n,X,Z); &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;i++; //次数＋1 &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Hanoi(n-1,Y,X,Z); &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;} &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;} &nbsp;&nbsp; &nbsp;public static void main(String[] args) { &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Scanner in =new Scanner(System.in); &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.print("请输入想要的层数："); &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;int r= in.nextInt(); &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.print("请输入想要停止的层数："); &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;int stop= in.nextInt(); &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// 使用do-while可以确保输出第一次输入的数 &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;do { &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Hanoi(r,'X','Y','Z'); &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;i=1; // 重置全局变量i &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if(r==stop) { // 当层数与停止层数相同时，直接跳出循环 &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;break; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;} &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.print("请重新输入层数，并开始下次执行"); &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;r= in.nextInt(); &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;} &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;while(r!=stop);&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.print("循环已结束");&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; // 直接使用whlie会使第一个输入的时候，停止层数和想要的层数相同的话，第一次循环无法执行 //&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;while(r!=stop) { &nbsp; //&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Hanoi(r,'X','Y','Z'); //&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;i=1; // 重置全局变量i //&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.print("请重新输入层数，并开始下次执行"); //&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;r= in.nextInt(); //&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;} //&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.print("循环已结束");&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;} &nbsp;&nbsp; &nbsp; } </code></pre> </p></div> 			                <div class="clearfix"></div>
+                  				  				  				<p>给定一个字符串，我们需要编写一个函数来创建一个对象，该对象将每个字母的索引存储在数组中。字符串的字母（元素）必须是对象的键</p> <p>索引应存储在数组中，并且这些数组是值。</p> <p>例如-</p> <p>如果输入字符串是-</p> <pre>const&nbsp;str&nbsp;=&nbsp;'cannot';</pre> <p>那么输出应该是-</p> <pre>const&nbsp;output&nbsp;=&nbsp;{ &nbsp;&nbsp;&nbsp;'c':&nbsp;[0], &nbsp;&nbsp;&nbsp;'a':&nbsp;[1], &nbsp;&nbsp;&nbsp;'n':&nbsp;[2,&nbsp;3], &nbsp;&nbsp;&nbsp;'o':&nbsp;[4], &nbsp;&nbsp;&nbsp;'t':&nbsp;[5] };</pre> <h2>示例</h2> <p>以下是代码-</p> <pre>const&nbsp;str&nbsp;=&nbsp;'cannot'; const&nbsp;mapString&nbsp;=&nbsp;str&nbsp;=&gt;&nbsp;{ &nbsp;&nbsp;&nbsp;const&nbsp;map&nbsp;=&nbsp;{}; &nbsp;&nbsp;&nbsp;for(let&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;str.length;&nbsp;i++){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(map.hasOwnProperty(str[i])){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;map[str[i]]&nbsp;=&nbsp;map[str[i]].concat(i); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;map[str[i]]&nbsp;=&nbsp;[i]; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}; &nbsp;&nbsp;&nbsp;}; &nbsp;&nbsp;&nbsp;return&nbsp;map; }; console.log(mapString(str));</pre> <p>输出结果</p> <p>以下是控制台中的输出-</p> <pre>{&nbsp;c:&nbsp;[&nbsp;0&nbsp;],&nbsp;a:&nbsp;[&nbsp;1&nbsp;],&nbsp;n:&nbsp;[&nbsp;2,&nbsp;3&nbsp;],&nbsp;o:&nbsp;[&nbsp;4&nbsp;],&nbsp;t:&nbsp;[&nbsp;5&nbsp;]&nbsp;}</pre> <div></div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
-                                        <p>上一个：<a href="/news/article-38334.htm">动物医院叫什么名字啊英文（动物医院 英文）</a></p>
-                                        <p>下一个：<a href="/news/article-38820.htm">开宠物店去哪里进货渠道（开宠物店去哪里进货渠道好）</a></p>
+                                        <p>上一个：<a href="/news/article-38820.htm">开宠物店去哪里进货渠道（开宠物店去哪里进货渠道好）</a></p>
+                                        <p>下一个：<a href="/news/article-39313.htm">开宠物店的弊端（开宠物店好不好）</a></p>
                                     </div>
                                     </div>
                     <div class="col-md-3">
@@ -123,16 +123,16 @@ $(function() {
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-10-13-node-share.htm" title="10月13日 | 最新V2ray/SSR/Shadowrocket/Clash高速免费节点，最高速度20M/S">10月13日 | 最新V2ray/SSR/Shadowrocket/Clash高速免费节点，最高速度20M/S</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-7-free-node-subscribe-links.htm" title="12月7日 | 最新Clash/V2ray/SSR/Shadowrocket高速免费节点，最高速度22.8M/S，便宜机场推荐">12月7日 | 最新Clash/V2ray/SSR/Shadowrocket高速免费节点，最高速度22.8M/S，便宜机场推荐</a></li>
-                        <li class="py-2"><a href="/news/article-25513.htm" title="被猫抓伤6天了***还有用吗（被猫抓伤6天了***还有用吗有事吗）">被猫抓伤6天了***还有用吗（被猫抓伤6天了***还有用吗有事吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-17-free-node-subscribe-links.htm" title="12月17日 | 最新Shadowrocket/SSR/V2ray/Clash高速免费节点，最高速度19.5M/S，便宜机场推荐">12月17日 | 最新Shadowrocket/SSR/V2ray/Clash高速免费节点，最高速度19.5M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-19996.htm" title="宠物粮食品牌名字4个字大全及图片（宠物粮食品牌名字4个字大全及图片及价格）">宠物粮食品牌名字4个字大全及图片（宠物粮食品牌名字4个字大全及图片及价格）</a></li>
+                        <li class="py-2"><a href="/news/article-27842.htm" title="宠物领养意思（领养宠物的定义）">宠物领养意思（领养宠物的定义）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-10-free-clash.htm" title="12月10日 | 最新Clash/V2ray/SSR/Shadowrocket高速免费节点，最高速度18.8M/S，便宜机场推荐">12月10日 | 最新Clash/V2ray/SSR/Shadowrocket高速免费节点，最高速度18.8M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-3-clash-v2ray-ss-ssr.htm" title="1月3日 | 最新SSR/Shadowrocket/Clash/V2ray高速免费节点地址，最高速度21.5M/S，便宜机场推荐">1月3日 | 最新SSR/Shadowrocket/Clash/V2ray高速免费节点地址，最高速度21.5M/S，便宜机场推荐</a></li>
                         <li class="py-2"><a href="/free-nodes/2024-10-7-free-ssr-subscribe.htm" title="10月7日 | 最新SSR/Clash/V2ray/Shadowrocket高速免费节点，最高速度19.7M/S">10月7日 | 最新SSR/Clash/V2ray/Shadowrocket高速免费节点，最高速度19.7M/S</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-1-6-free-node-subscribe.htm" title="1月6日 | 最新Clash/V2ray/SSR/Shadowrocket高速免费节点地址，最高速度19.9M/S，便宜机场推荐">1月6日 | 最新Clash/V2ray/SSR/Shadowrocket高速免费节点地址，最高速度19.9M/S，便宜机场推荐</a></li>
-                        <li class="py-2"><a href="/news/article-30080.htm" title="宠物用品（宠物用品市场调研报告）">宠物用品（宠物用品市场调研报告）</a></li>
-                        <li class="py-2"><a href="/news/article-25984.htm" title="狗粮加工企业排名前十（寻求狗粮加工合作厂家）">狗粮加工企业排名前十（寻求狗粮加工合作厂家）</a></li>
-                        <li class="py-2"><a href="/news/article-20906.htm" title="动物疫苗的作用原理是什么呢（动物疫苗的使用方法及注意事项）">动物疫苗的作用原理是什么呢（动物疫苗的使用方法及注意事项）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-24-node-share-links.htm" title="12月24日 | 最新SSR/Clash/Shadowrocket/V2ray高速免费节点地址，最高速度21M/S，便宜机场推荐">12月24日 | 最新SSR/Clash/Shadowrocket/V2ray高速免费节点地址，最高速度21M/S，便宜机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-1-11-free-ssr-node.htm" title="1月11日 | 最新Clash/V2ray/SSR/Shadowrocket高速免费节点地址，最高速度18.4M/S，便宜机场推荐">1月11日 | 最新Clash/V2ray/SSR/Shadowrocket高速免费节点地址，最高速度18.4M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-4-free-subscribe-node.htm" title="12月4日 | 最新V2ray/Clash/SSR/Shadowrocket高速免费节点，最高速度20.1M/S，便宜机场推荐">12月4日 | 最新V2ray/Clash/SSR/Shadowrocket高速免费节点，最高速度20.1M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-30-node-share-links.htm" title="10月30日 | 最新Shadowrocket/Clash/SSR/V2ray高速免费节点，最高速度18.2M/S，便宜机场推荐">10月30日 | 最新Shadowrocket/Clash/SSR/V2ray高速免费节点，最高速度18.2M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-25-free-high-speed-nodes.htm" title="12月25日 | 最新V2ray/Clash/Shadowrocket/SSR高速免费节点地址，最高速度21.9M/S，便宜机场推荐">12月25日 | 最新V2ray/Clash/Shadowrocket/SSR高速免费节点地址，最高速度21.9M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-12-free-v2ray-subscribe.htm" title="1月12日 | 最新Clash/Shadowrocket/SSR/V2ray高速免费节点地址，最高速度19.7M/S，便宜机场推荐">1月12日 | 最新Clash/Shadowrocket/SSR/V2ray高速免费节点地址，最高速度19.7M/S，便宜机场推荐</a></li>
                     </ul>
     </div>
 </div>
