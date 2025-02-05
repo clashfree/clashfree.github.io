@@ -1,19 +1,47 @@
 <!doctype html>
-<html lang="zh-CN">
+<html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
-    <!-- Required meta tags -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="canonical" href="https://clashfree.github.io/news/article-30181.htm" />
-<link rel="icon" href="/assets/website/img/clashfree/favicon.ico" type="image/x-icon"/>
-<title>springboot集成Elasticsearch实现各种搜索功能</title>
-<meta name="description" content="springboot集成Elasticsearch各类搜索功能实现    springboot集成Elasticsearch使用completion suggest实现自动关键字补全   建立学生的索" />
-<link rel="stylesheet" href="/assets/website/css/clashfree/style-starter.css">
-<link href="https://fonts.googleapis.com/css?family=Josefin+Slab:400,700,700i&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-<!-- Google tag (gtag.js) -->
+    	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="canonical" href="https://clashfree.github.io/news/article-30181.htm" />
+	<link rel="icon" href="/assets/website/img/clashfree/favicon.ico" type="image/x-icon"/>
+	<title>springboot集成Elasticsearch实现各种搜索功能</title>
+		<meta name="description" content="springboot集成Elasticsearch各类搜索功能实现    springboot集成Elasticsearch使用completion suggest实现自动关键字补全   建立学生的索" />
+	
+    <meta name="author" content="ClashFree节点免费订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashfree.github.io/news/article-30181.htm" />
+    <meta property="og:site_name" content="ClashFree节点免费订阅站" />
+    <meta property="og:title" content="springboot集成Elasticsearch实现各种搜索功能" />
+    <meta property="og:image" content="https://clashfree.github.io/uploads/20240303/d13bf8db954d4c0f4dc10ce258c129fd.webp" />
+        <meta property="og:release_date" content="2024-12-24T09:40:44" />
+    <meta property="og:updated_time" content="2024-12-24T09:40:44" />
+        <meta property="og:description" content="springboot集成Elasticsearch各类搜索功能实现    springboot集成Elasticsearch使用completion suggest实现自动关键字补全   建立学生的索" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="springboot集成Elasticsearch实现各种搜索功能">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+	<link rel="stylesheet" href="/assets/website/css/clashfree/style-starter.css">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Slab:400,700,700i&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+	<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FVS49PB05G"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -22,7 +50,7 @@
 
   gtag('config', 'G-FVS49PB05G');
 </script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
      crossorigin="anonymous"></script>
 </head>
 
@@ -123,16 +151,16 @@ $(function() {
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-10-20-clash-node.htm" title="10月20日 | 最新V2ray/Clash/Shadowrocket/SSR高速免费节点，最高速度19.8M/S，便宜机场推荐">10月20日 | 最新V2ray/Clash/Shadowrocket/SSR高速免费节点，最高速度19.8M/S，便宜机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-5-3-free-shadowrocket-node.htm" title="5月3日 | 最新Shadowrocket/SSR/V2ray/Clash高速免费节点，最高速度22.2M/S">5月3日 | 最新Shadowrocket/SSR/V2ray/Clash高速免费节点，最高速度22.2M/S</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-7-14-free-subscribe-node.htm" title="7月14日 | 最新Shadowrocket/V2ray/SSR/Clash高速免费节点，最高速度18.2M/S">7月14日 | 最新Shadowrocket/V2ray/SSR/Clash高速免费节点，最高速度18.2M/S</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-18-free-clash.htm" title="1月18日 | 最新Shadowrocket/SSR/Clash/V2ray高速免费节点地址，最高速度22.6M/S，便宜机场推荐">1月18日 | 最新Shadowrocket/SSR/Clash/V2ray高速免费节点地址，最高速度22.6M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-37357.htm" title="闲鱼无货源怎么卖东西（闲鱼无货源怎么卖东西呢）">闲鱼无货源怎么卖东西（闲鱼无货源怎么卖东西呢）</a></li>
+                        <li class="py-2"><a href="/news/article-44770.htm" title="Zookeeper——客户端API的相关方法操作">Zookeeper——客户端API的相关方法操作</a></li>
+                        <li class="py-2"><a href="/news/article-25512.htm" title="一个新手怎么开奶茶店（一个新手怎么开奶茶店家里能做蘑菇吗）">一个新手怎么开奶茶店（一个新手怎么开奶茶店家里能做蘑菇吗）</a></li>
+                        <li class="py-2"><a href="/news/article-49738.htm" title="Java程序来删除一个文件中的某些文本">Java程序来删除一个文件中的某些文本</a></li>
+                        <li class="py-2"><a href="/news/article-40300.htm" title="动物疫苗排名前十位是什么品种 动物疫苗排名前十位是什么品种的">动物疫苗排名前十位是什么品种 动物疫苗排名前十位是什么品种的</a></li>
+                        <li class="py-2"><a href="/news/article-41788.htm" title="动物防疫站打狂犬疫苗要钱吗多少钱一次（给动物打狂犬疫苗多少钱一针）">动物防疫站打狂犬疫苗要钱吗多少钱一次（给动物打狂犬疫苗多少钱一针）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-20-clash-windows.htm" title="12月20日 | 最新Shadowrocket/V2ray/Clash/SSR高速免费节点，最高速度22.5M/S，便宜机场推荐">12月20日 | 最新Shadowrocket/V2ray/Clash/SSR高速免费节点，最高速度22.5M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-20-free-v2ray-subscribe.htm" title="11月20日 | 最新V2ray/Shadowrocket/Clash/SSR高速免费节点，最高速度21M/S，便宜机场推荐">11月20日 | 最新V2ray/Shadowrocket/Clash/SSR高速免费节点，最高速度21M/S，便宜机场推荐</a></li>
                         <li class="py-2"><a href="/news/article-24593.htm" title="动物疫苗的概念和特点（动物疫苗概念股有哪些）">动物疫苗的概念和特点（动物疫苗概念股有哪些）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-17-free-clash-subscribe.htm" title="11月17日 | 最新SSR/V2ray/Shadowrocket/Clash高速免费节点，最高速度22.7M/S，便宜机场推荐">11月17日 | 最新SSR/V2ray/Shadowrocket/Clash高速免费节点，最高速度22.7M/S，便宜机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-2-node-share.htm" title="8月2日 | 最新Shadowrocket/SSR/V2ray/Clash高速免费节点，最高速度18.4M/S">8月2日 | 最新Shadowrocket/SSR/V2ray/Clash高速免费节点，最高速度18.4M/S</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-14-clash-node-daily-updates.htm" title="11月14日 | 最新SSR/V2ray/Clash/Shadowrocket高速免费节点，最高速度21.4M/S，便宜机场推荐">11月14日 | 最新SSR/V2ray/Clash/Shadowrocket高速免费节点，最高速度21.4M/S，便宜机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-6-17-clash-v2ray-ss-ssr.htm" title="6月17日 | 最新Shadowrocket/SSR/V2ray/Clash高速免费节点，最高速度20.9M/S">6月17日 | 最新Shadowrocket/SSR/V2ray/Clash高速免费节点，最高速度20.9M/S</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-17-free-v2ray-subscribe.htm" title="8月17日 | 最新V2ray/Clash/Shadowrocket/SSR高速免费节点，最高速度18.9M/S">8月17日 | 最新V2ray/Clash/Shadowrocket/SSR高速免费节点，最高速度18.9M/S</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-10-free-clash.htm" title="11月10日 | 最新Shadowrocket/V2ray/SSR/Clash高速免费节点，最高速度18.8M/S，便宜机场推荐">11月10日 | 最新Shadowrocket/V2ray/SSR/Clash高速免费节点，最高速度18.8M/S，便宜机场推荐</a></li>
                     </ul>
     </div>
 </div>
@@ -144,37 +172,16 @@ $(function() {
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>

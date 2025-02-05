@@ -1,19 +1,47 @@
 <!doctype html>
-<html lang="zh-CN">
+<html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
-    <!-- Required meta tags -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="canonical" href="https://clashfree.github.io/news/article-23197.htm" />
-<link rel="icon" href="/assets/website/img/clashfree/favicon.ico" type="image/x-icon"/>
-<title>Python，如何将元组中的元素作为参数传入函数</title>
-<meta name="description" content="本文由Markdown语法编辑器编辑完成。  1. 需求： 现在有一个Python的需求需要实现： 就是实现连接一次数据库，就能够执行多条SQL语句，而且这个SQL语句是需要通过调用者将每一次执行的参" />
-<link rel="stylesheet" href="/assets/website/css/clashfree/style-starter.css">
-<link href="https://fonts.googleapis.com/css?family=Josefin+Slab:400,700,700i&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-<!-- Google tag (gtag.js) -->
+    	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="canonical" href="https://clashfree.github.io/news/article-23197.htm" />
+	<link rel="icon" href="/assets/website/img/clashfree/favicon.ico" type="image/x-icon"/>
+	<title>Python，如何将元组中的元素作为参数传入函数</title>
+		<meta name="description" content="本文由Markdown语法编辑器编辑完成。  1. 需求： 现在有一个Python的需求需要实现： 就是实现连接一次数据库，就能够执行多条SQL语句，而且这个SQL语句是需要通过调用者将每一次执行的参" />
+	
+    <meta name="author" content="ClashFree节点免费订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashfree.github.io/news/article-23197.htm" />
+    <meta property="og:site_name" content="ClashFree节点免费订阅站" />
+    <meta property="og:title" content="Python，如何将元组中的元素作为参数传入函数" />
+    <meta property="og:image" content="https://clashfree.github.io/uploads/20240303/91d732709c777c60f4d848bc785bce75.webp" />
+        <meta property="og:release_date" content="2024-12-09T10:26:52" />
+    <meta property="og:updated_time" content="2024-12-09T10:26:52" />
+        <meta property="og:description" content="本文由Markdown语法编辑器编辑完成。  1. 需求： 现在有一个Python的需求需要实现： 就是实现连接一次数据库，就能够执行多条SQL语句，而且这个SQL语句是需要通过调用者将每一次执行的参" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Python，如何将元组中的元素作为参数传入函数">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+	<link rel="stylesheet" href="/assets/website/css/clashfree/style-starter.css">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Slab:400,700,700i&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+	<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FVS49PB05G"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -22,7 +50,7 @@
 
   gtag('config', 'G-FVS49PB05G');
 </script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
      crossorigin="anonymous"></script>
 </head>
 
@@ -123,16 +151,16 @@ $(function() {
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-9-29-node-share-links.htm" title="9月29日 | 最新Clash/SSR/Shadowrocket/V2ray高速免费节点，最高速度18.3M/S">9月29日 | 最新Clash/SSR/Shadowrocket/V2ray高速免费节点，最高速度18.3M/S</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-6-25-free-clash.htm" title="6月25日 | 最新SSR/Clash/V2ray/Shadowrocket高速免费节点，最高速度22M/S">6月25日 | 最新SSR/Clash/V2ray/Shadowrocket高速免费节点，最高速度22M/S</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-18-node-share.htm" title="10月18日 | 最新V2ray/SSR/Clash/Shadowrocket高速免费节点，最高速度18M/S，便宜机场推荐">10月18日 | 最新V2ray/SSR/Clash/Shadowrocket高速免费节点，最高速度18M/S，便宜机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-4-1-free-node-subscribe.htm" title="4月1日 | 最新SSR/Clash/V2ray/Shadowrocket高速免费节点，最高速度20M/S">4月1日 | 最新SSR/Clash/V2ray/Shadowrocket高速免费节点，最高速度20M/S</a></li>
-                        <li class="py-2"><a href="/news/article-32557.htm" title="被猫抓了一出血了要打针吗（被猫抓了一下出了点血一定要打针吗）">被猫抓了一出血了要打针吗（被猫抓了一下出了点血一定要打针吗）</a></li>
-                        <li class="py-2"><a href="/news/article-27841.htm" title="宠物食品代理怎么做的（宠物食品代工需要什么手续）">宠物食品代理怎么做的（宠物食品代工需要什么手续）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-7-12-free-clash.htm" title="7月12日 | 最新SSR/Shadowrocket/V2ray/Clash高速免费节点，最高速度20.3M/S">7月12日 | 最新SSR/Shadowrocket/V2ray/Clash高速免费节点，最高速度20.3M/S</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-5-30-node-share-links.htm" title="5月30日 | 最新Clash/V2ray/SSR/Shadowrocket高速免费节点，最高速度22.2M/S">5月30日 | 最新Clash/V2ray/SSR/Shadowrocket高速免费节点，最高速度22.2M/S</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-29-clash-v2ray-ss-ssr.htm" title="12月29日 | 最新SSR/V2ray/Clash/Shadowrocket高速免费节点地址，最高速度18.9M/S，便宜机场推荐">12月29日 | 最新SSR/V2ray/Clash/Shadowrocket高速免费节点地址，最高速度18.9M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-30181.htm" title="springboot集成Elasticsearch实现各种搜索功能">springboot集成Elasticsearch实现各种搜索功能</a></li>
+                        <li class="py-2"><a href="/news/article-19995.htm" title="纯JS 全屏滚动 / 整屏翻页">纯JS 全屏滚动 / 整屏翻页</a></li>
+                        <li class="py-2"><a href="/news/article-21828.htm" title="开个小型宠物食品加工厂挣钱吗知乎文章怎么写（开个宠物食品厂要投资多少钱）">开个小型宠物食品加工厂挣钱吗知乎文章怎么写（开个宠物食品厂要投资多少钱）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-15-clash-windows.htm" title="12月15日 | 最新Clash/SSR/Shadowrocket/V2ray高速免费节点，最高速度18.7M/S，便宜机场推荐">12月15日 | 最新Clash/SSR/Shadowrocket/V2ray高速免费节点，最高速度18.7M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-34468.htm" title="广州宠物领养网免费领养猫咪的地方（广州宠物猫领养中心）">广州宠物领养网免费领养猫咪的地方（广州宠物猫领养中心）</a></li>
+                        <li class="py-2"><a href="/news/article-26445.htm" title="动物疫苗有哪些大厂家生产的（动物疫苗有哪些大厂家生产的好）">动物疫苗有哪些大厂家生产的（动物疫苗有哪些大厂家生产的好）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-8-free-node-subscribe-links.htm" title="1月8日 | 最新Clash/SSR/V2ray/Shadowrocket高速免费节点地址，最高速度18.8M/S，便宜机场推荐">1月8日 | 最新Clash/SSR/V2ray/Shadowrocket高速免费节点地址，最高速度18.8M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-32088.htm" title="宠物零食制作教程视频（怎么做宠物零食）">宠物零食制作教程视频（怎么做宠物零食）</a></li>
                         <li class="py-2"><a href="/free-nodes/2024-11-11-free-ssr-subscribe.htm" title="11月11日 | 最新Shadowrocket/SSR/V2ray/Clash高速免费节点，最高速度19.5M/S，便宜机场推荐">11月11日 | 最新Shadowrocket/SSR/V2ray/Clash高速免费节点，最高速度19.5M/S，便宜机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-7-free-node-subscribe.htm" title="8月7日 | 最新SSR/Clash/Shadowrocket/V2ray高速免费节点，最高速度19.9M/S">8月7日 | 最新SSR/Clash/Shadowrocket/V2ray高速免费节点，最高速度19.9M/S</a></li>
                     </ul>
     </div>
 </div>
@@ -144,37 +172,16 @@ $(function() {
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>
