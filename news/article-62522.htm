@@ -1,0 +1,249 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+    	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="canonical" href="https://clashfree.github.io/news/article-62522.htm" />
+	<link rel="icon" href="/assets/website/img/clashfree/favicon.ico" type="image/x-icon"/>
+	<title>YARN线上动态资源调优</title>
+		<meta name="description" content="线上Hadoop集群资源严重不足，可能存在添加磁盘，添加CPU，添加节点的操作，那么在添加这些硬件资源之后，我们的集群是不能立马就利用上这些资源的，需要修改集群Yarn资源配置，然后使其生效。  服务" />
+	
+    <meta name="author" content="ClashFree节点免费订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashfree.github.io/news/article-62522.htm" />
+    <meta property="og:site_name" content="ClashFree节点免费订阅站" />
+    <meta property="og:title" content="YARN线上动态资源调优" />
+    <meta property="og:image" content="https://clashfree.github.io/uploads/20240303/bf3872da6472d19b07b0780dadc2e273.webp" />
+        <meta property="og:release_date" content="2025-02-25T04:58:18" />
+    <meta property="og:updated_time" content="2025-02-25T04:58:18" />
+        <meta property="og:description" content="线上Hadoop集群资源严重不足，可能存在添加磁盘，添加CPU，添加节点的操作，那么在添加这些硬件资源之后，我们的集群是不能立马就利用上这些资源的，需要修改集群Yarn资源配置，然后使其生效。  服务" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="YARN线上动态资源调优">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+	<link rel="stylesheet" href="/assets/website/css/clashfree/style-starter.css">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Slab:400,700,700i&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FVS49PB05G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FVS49PB05G');
+</script>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body id="home" data-page="detail">
+    <section class=" w3l-header-4 header-sticky">
+    <header class="absolute-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                                <a class="navbar-brand" href="/">
+                        Clash Free                    </a>
+                                <button class="navbar-toggler bg-gradient collapsed" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="fa icon-expand fa-bars"></span>
+                    <span class="fa icon-close fa-times"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/client.htm">客户端</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                            </ul>
+                </div>
+        </div>
+        </nav>
+        </div>
+    </header>
+</section>
+<script src="/assets/website/js/frontend/clashfree/jquery-3.5.1.min.js"></script> <!-- Common jquery plugin -->
+<!--bootstrap working-->
+<script src="/assets/website/js/frontend/clashfree/bootstrap.min.js"></script>
+<!-- //bootstrap working-->
+<!-- disable body scroll which navbar is in active -->
+<script>
+$(function() {
+    $('.navbar-toggler').click(function() {
+        $('body').toggleClass('noscroll');
+    })
+});
+</script>
+    <!-- breadcrumbs -->
+    <section class="w3l-inner-banner-main">
+        <div class="about-inner about ">
+            <div class="container">
+                <div class="main-titles-head text-center">
+                    <h1 class="header-name" style="word-break: break-all;">
+                        YARN线上动态资源调优                    </h1>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="breadcrumbs-sub">
+            <div class="container">
+                <ul class="breadcrumbs-custom-path">
+                    <li class="right-side propClone"><a href="/" class="">首页 <span class="fa fa-angle-right" aria-hidden="true"></span></a>
+                        <p>
+                    </li>
+                    <li class="right-side propClone"><a href="/news/" class="">新闻资讯 <span class="fa fa-angle-right" aria-hidden="true"></span></a>
+                        <p>
+                    </li>
+                    <li class="active ">正文</li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- breadcrumbs //-->
+    <section class="w3l-content-with-photo-4" id="about">
+        <div class="content-with-photo4-block ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				</h1> <p class="md-end-block md-p"><span class="md-plain">线上Hadoop集群资源严重不足，可能存在添加磁盘，添加CPU，添加节点的操作，那么在添加这些硬件资源之后，我们的集群是不能立马就利用上这些资源的，需要修改集群Yarn资源配置，然后使其生效。</span></p> </h1> <p class="md-end-block md-p"><span class="md-plain">服务器：12台，内存64Gx12=768G，物理cpu16x12=192，磁盘12Tx12=144T</span></p> <p class="md-end-block md-p"><span class="md-plain">组件：Hadoop-2.7.7，Hive-2.3.4，Presto-220，Dolphinscheduler-1.3.6，Sqoop-1.4.7</span></p> <p class="md-end-block md-p"><span class="md-pair-s"><strong><span class="md-plain">分配策略</span></strong></span></p> <p class="md-end-block md-p"><span class="md-plain">由于我们的版本是Hadoop-2.7.7，有些默认配置是固定一个值，好比可用内存8G，可用CPU核数8核，如果调优就需要我们配置的东西比较多。</span></p> <p class="md-end-block md-p"><span class="md-plain">官方Yarn参数配置：</span><span class="md-link md-pair-s" spellcheck="false"><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://hadoop.apache.org/docs/r2.7.7/hadoop-yarn/hadoop-yarn-common/yarn-default.xml"  rel="nofollow">https://hadoop.apache.org/docs/r2.7.7/hadoop-yarn/hadoop-yarn-common/yarn-default.xml</a></span></p> <p class="md-end-block md-p md-focus"><span class="md-plain md-expand">未来的版本(Hadoop-3.0+)其实是有自动检测硬件资源的机制，需要开启配置：</span><span class="md-pair-s" spellcheck="false"><code>yarn.nodemanager.resource.detect-hardware-capabilities</code></span><span class="md-plain">，然后会自动计算资源配置，不过这个是默认关闭的，每个节点的NodeManager可用内存配置</span><span class="md-pair-s" spellcheck="false"><code>yarn.nodemanager.resource.memory-mb</code></span><span class="md-plain"> 和CPU核数</span><span class="md-pair-s" spellcheck="false"><code>yarn.nodemanager.resource.cpu-vcores</code></span><span class="md-plain"> 也是受此配置影响， 默认配置都是-1，则可用内存为8G，CPU核数为8核。如果开启了自动监测硬件资源，其他配置则可以忽略不用配置，简化了配置。</span></p> <p class="md-end-block md-p"><span class="md-plain">官方Yarn参数配置：</span><span class="md-link md-pair-s" spellcheck="false"><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://hadoop.apache.org/docs/stable/hadoop-yarn/hadoop-yarn-common/yarn-default.xml"  rel="nofollow">https://hadoop.apache.org/docs/stable/hadoop-yarn/hadoop-yarn-common/yarn-default.xml</a></span></p> <p class="md-end-block md-p"><span class="md-plain">还有一个重要的配置</span><span class="md-pair-s" spellcheck="false"><code>yarn.nodemanager.vmem-pmem-ratio</code></span><span class="md-plain"> ，表示NodeManager上的Container物理内存不足时，可用使用虚拟内存，默认为物理内存的2.1倍。</span></p> </h1> <h2 class="md-end-block md-heading"><span class="md-plain">yarn-site.xml</span></h2> <p class="md-end-block md-p"><span class="md-plain">修改yarn-site.xml，有则修改，没有则添加，这里我们设置单个节点可用内存30G，可用CPU核数为16</span></p> <pre class="md-fences md-end-block ty-contain-cm modeLoaded" lang="xml" spellcheck="false"><code>&lt;property&gt;  &nbsp; &nbsp;&lt;name&gt;yarn.nodemanager.resource.memory-mb&lt;/name&gt;  &nbsp; &nbsp;&lt;value&gt;30720&lt;/value&gt;  &nbsp; &nbsp;&lt;discription&gt;每个节点可用内存,默认8192M(8G),这里设置30G&lt;/discription&gt; &lt;/property&gt; &lt;property&gt;  &nbsp; &nbsp;&lt;name&gt;yarn.scheduler.minimum-allocation-mb&lt;/name&gt;  &nbsp; &nbsp;&lt;value&gt;1024&lt;/value&gt;  &nbsp; &nbsp;&lt;discription&gt;单个任务可申请最少内存，默认1024MB&lt;/discription&gt; &lt;/property&gt; &lt;property&gt;  &nbsp; &nbsp;&lt;name&gt;yarn.scheduler.maximum-allocation-mb&lt;/name&gt;  &nbsp; &nbsp;&lt;value&gt;20480&lt;/value&gt;  &nbsp; &nbsp;&lt;discription&gt;单个任务可申请最大内存，默认8192M(8G),这里设置20G&lt;/discription&gt; &lt;/property&gt; &lt;property&gt;  &nbsp; &nbsp;&lt;name&gt;yarn.app.mapreduce.am.resource.mb&lt;/name&gt;  &nbsp; &nbsp;&lt;value&gt;2048&lt;/value&gt;  &nbsp; &nbsp;&lt;discription&gt;默认为1536。MR运行于YARN上时，为AM分配多少内存。默认值通常来说过小，建议设置为2048或4096等较大的值。&lt;/discription&gt; &lt;/property&gt; &lt;property&gt;  &nbsp; &nbsp;&lt;name&gt;yarn.nodemanager.resource.cpu-vcores&lt;/name&gt;  &nbsp; &nbsp;&lt;value&gt;16&lt;/value&gt;  &nbsp; &nbsp;&lt;discription&gt;默认为8。每个节点可分配多少虚拟核给YARN使用，通常设为该节点定义的总虚拟核数即可。&lt;/discription&gt; &lt;/property&gt; &lt;property&gt;  &nbsp; &nbsp;&lt;name&gt;yarn.scheduler.maximum-allocation-vcores&lt;/name&gt;  &nbsp; &nbsp;&lt;value&gt;32&lt;/value&gt;  &nbsp; &nbsp;&lt;discription&gt;分别为1/32，指定RM可以为每个container分配的最小/最大虚拟核数，低 于或高于该限制的核申请，会按最小或最大核数来进行分配。默认值适合 一般集群使用。&lt;/discription&gt; &lt;/property&gt; &lt;property&gt;  &nbsp; &nbsp;&lt;name&gt;yarn.scheduler.minimum-allocation-vcores&lt;/name&gt;  &nbsp; &nbsp;&lt;value&gt;1&lt;/value&gt;  &nbsp; &nbsp;&lt;discription&gt;分别为1/32，指定RM可以为每个container分配的最小/最大虚拟核数，低 于或高于该限制的核申请，会按最小或最大核数来进行分配。默认值适合 一般集&gt;群使用。&lt;/discription&gt; &lt;/property&gt; &lt;property&gt;  &nbsp;&lt;name&gt;yarn.nodemanager.vcores-pcores-ratio&lt;/name&gt;  &nbsp;&lt;value&gt;2&lt;/value&gt;  &nbsp;&lt;discription&gt;每使用一个物理cpu，可以使用的虚拟cpu的比例，默认为2&lt;/discription&gt; &lt;/property&gt;  &lt;property&gt;  &nbsp;&lt;name&gt;yarn.nodemanager.vmem-pmem-ratio&lt;/name&gt;  &nbsp;&lt;value&gt;5.2&lt;/value&gt;  &nbsp;&lt;discription&gt;物理内存不足时,使用的虚拟内存，默认是2.1，表示每使用1MB的物理内存，最多可以使用2.1MB的虚拟内存总量。&lt;/discription&gt; &lt;/property&gt;</code></pre> <h2 class="md-end-block md-heading"><span class="md-plain">mapred-site.xml</span></h2> <p class="md-end-block md-p"><span class="md-plain">修改mapred-site.xml，有则修改，没有则添加</span></p> <p class="md-end-block md-p"><span class="md-plain">给单个任务设置内存资源，注意这里的值不能大于上面对应的内存</span><span class="md-pair-s" spellcheck="false"><code>yarn.scheduler.maximum-allocation-mb</code></span></p> <pre class="md-fences md-end-block ty-contain-cm modeLoaded" lang="xml" spellcheck="false"><code>&lt;property&gt;  &nbsp; &nbsp;&lt;name&gt;mapreduce.map.memory.mb&lt;/name&gt;  &nbsp; &nbsp;&lt;value&gt;2048&lt;/value&gt;  &nbsp; &nbsp;&lt;discription&gt;默认均为1024，调度器为每个map/reduce task申请的内存数。各Job也可以单独指定。&lt;/discription&gt; &lt;/property&gt; &lt;property&gt;  &nbsp; &nbsp;&lt;name&gt;mapreduce.reduce.memory.mb&lt;/name&gt;  &nbsp; &nbsp;&lt;value&gt;2048&lt;/value&gt;  &nbsp; &nbsp;&lt;discription&gt;默认均为1024，调度器为每个map/reduce task申请的内存数。各Job也可以单独指定。&lt;/discription&gt; &lt;/property&gt;</code></pre> </h1> <h2 class="md-end-block md-heading"><span class="md-plain">分发</span></h2> <p class="md-end-block md-p"><span class="md-plain">修改完配置后，一定要将配置分发到其他集群节点，使用 scp 或者 xsync 工具分发到其他节点，这里举例分发到一个节点</span></p> <p class="md-end-block md-p"><span class="md-pair-s" spellcheck="false"><code>cd /data/soft/hadoop/hadoop-2.7.7/etc/hadoop</code></span></p> <p class="md-end-block md-p"><span class="md-pair-s" spellcheck="false"><code>scp -r yarn-site.xml mapred-site.xml data002:`pwd`</code></span></p> <h2 class="md-end-block md-heading"><span class="md-plain">动态重启</span></h2> <p class="md-end-block md-p"><span class="md-plain">为了不影响集群使用，我们单独启停Yarn，Yarn的服务主要有两个NodeManager和ResourceManager，单独启停命令</span></p> <p class="md-end-block md-p"><span class="md-pair-s" spellcheck="false"><code>yarn-daemon.sh stop nodemanager</code></span><span class="md-pair-s" spellcheck="false"><code>yarn-daemon.sh start nademanager</code></span></p> <p class="md-end-block md-p"><span class="md-pair-s" spellcheck="false"><code>yarn-daemon.sh stop resourcemanager</code></span><span class="md-pair-s" spellcheck="false"><code>yarn-daemon.sh start resourcemanager</code></span></p> <p class="md-end-block md-p"><span class="md-plain">根据集群节点逐个执行以上命令，ResourceManager对应的节点执行对应的命令。这样我们就保证了集群资源的动态调优。</span></p> <p class="md-end-block md-p"><span class="md-plain">当然，如果单个重启麻烦，也可以执行Yarn的重启命令</span></p> <p class="md-end-block md-p"><span class="md-pair-s" spellcheck="false"><code>stop-yarn.sh</code></span><span class="md-pair-s" spellcheck="false"><code>start-yarn.sh</code></span></p> <p class="md-end-block md-p"><span class="md-plain">ResourceManager对应的从节点单独启停即可。</span></p> <blockquote> <p class="md-end-block md-p"><span class="md-plain md-expand">更多请在公号平台搜索：选手一号位，本文编号：2004，回复即可获取。</span></p> </blockquote> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-61928.htm">可以自己买疫苗给猫咪打吗多少钱（自己买疫苗给猫打能开检疫证明嘛）</a></p>
+                                        <p>下一个：<a href="/news/article-62523.htm">农大动物医院有夜间急诊吗几点下班（农大动物医院几点开门）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-11-24-clash-node.htm" title="11月24日 | 最新SSR/Clash/V2ray/Shadowrocket高速免费节点，最高速度22.9M/S，便宜机场推荐">11月24日 | 最新SSR/Clash/V2ray/Shadowrocket高速免费节点，最高速度22.9M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-18-free-subscribe-node.htm" title="11月18日 | 最新Clash/Shadowrocket/V2ray/SSR高速免费节点，最高速度18.2M/S，便宜机场推荐">11月18日 | 最新Clash/Shadowrocket/V2ray/SSR高速免费节点，最高速度18.2M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-30655.htm" title="穷人养猫还是富人养猫（穷人养猫富人养狗）">穷人养猫还是富人养猫（穷人养猫富人养狗）</a></li>
+                        <li class="py-2"><a href="/news/article-43776.htm" title="成年猫注射疫苗应注意事项（成年猫要打什么针）">成年猫注射疫苗应注意事项（成年猫要打什么针）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-17-free-node-subscribe-links.htm" title="12月17日 | 最新Shadowrocket/SSR/V2ray/Clash高速免费节点，最高速度19.5M/S，便宜机场推荐">12月17日 | 最新Shadowrocket/SSR/V2ray/Clash高速免费节点，最高速度19.5M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-19538.htm" title="docker-compose 配置kafka_Docker Compose 引用环境变量">docker-compose 配置kafka_Docker Compose 引用环境变量</a></li>
+                        <li class="py-2"><a href="/news/article-55058.htm" title="猫抓十天后猫没死人用***吗好大夫在线（家猫抓十天后猫没死人用***吗）">猫抓十天后猫没死人用***吗好大夫在线（家猫抓十天后猫没死人用***吗）</a></li>
+                        <li class="py-2"><a href="/news/article-62523.htm" title="农大动物医院有夜间急诊吗几点下班（农大动物医院几点开门）">农大动物医院有夜间急诊吗几点下班（农大动物医院几点开门）</a></li>
+                        <li class="py-2"><a href="/news/article-33051.htm" title="python中，用pyspark读写Hive数据">python中，用pyspark读写Hive数据</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-11-node-share-links.htm" title="12月11日 | 最新SSR/V2ray/Clash/Shadowrocket高速免费节点，最高速度22.5M/S，便宜机场推荐">12月11日 | 最新SSR/V2ray/Clash/Shadowrocket高速免费节点，最高速度22.5M/S，便宜机场推荐</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">75</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    </section>
+    
+        <section class="w3l-footer-29-main w3l-copyright">
+        <div class="container">
+            <div class="row bottom-copies">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                <p class="col-lg-8 copy-footer-29">
+                    ClashFree节点免费订阅站 版权所有
+                    <br />
+                    Powered by WordPress
+                </p>
+                <div class="col-lg-4 main-social-footer-29">
+                    <a href="#facebook" class="facebook"><span class="fa fa-facebook"></span></a>
+                    <a href="#twitter" class="twitter"><span class="fa fa-twitter"></span></a>
+                    <a href="#instagram" class="instagram"><span class="fa fa-instagram"></span></a>
+                    <a href="#linkedin" class="linkedin"><span class="fa fa-linkedin"></span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- move top -->
+    <button onclick="topFunction()" id="movetop" title="Go to top">
+        <span class="fa fa-long-arrow-up"></span>
+    </button>
+    <script>
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("movetop").style.display = "block";
+        } else {
+            document.getElementById("movetop").style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    </script>
+    <!-- /move top -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
