@@ -1,4 +1,4 @@
-# 10月1日 | 最新SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点高速免费节点地址，最高速度19.1M/S，便宜机场推荐  更新时间 2025-10-01 09:13:35
+# 10月7日 | 最新Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/SSR节点高速免费节点地址，最高速度18.3M/S，便宜机场推荐  更新时间 2025-10-07 09:06:29
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://clashfree.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### 免费Clash节点订阅链接
 
-- https://clashfree.github.io/uploads/2025/10/0-20251001.yaml
-- https://clashfree.github.io/uploads/2025/10/1-20251001.yaml
-- https://clashfree.github.io/uploads/2025/10/2-20251001.yaml
-- https://clashfree.github.io/uploads/2025/10/3-20251001.yaml
-- https://clashfree.github.io/uploads/2025/10/4-20251001.yaml
+- https://clashfree.github.io/uploads/2025/10/0-20251007.yaml
+- https://clashfree.github.io/uploads/2025/10/1-20251007.yaml
+- https://clashfree.github.io/uploads/2025/10/2-20251007.yaml
+- https://clashfree.github.io/uploads/2025/10/3-20251007.yaml
+- https://clashfree.github.io/uploads/2025/10/4-20251007.yaml
 
 ### 免费V2ray节点订阅链接
 
-- https://clashfree.github.io/uploads/2025/10/0-20251001.txt
-- https://clashfree.github.io/uploads/2025/10/1-20251001.txt
-- https://clashfree.github.io/uploads/2025/10/2-20251001.txt
-- https://clashfree.github.io/uploads/2025/10/3-20251001.txt
-- https://clashfree.github.io/uploads/2025/10/4-20251001.txt
+- https://clashfree.github.io/uploads/2025/10/0-20251007.txt
+- https://clashfree.github.io/uploads/2025/10/1-20251007.txt
+- https://clashfree.github.io/uploads/2025/10/2-20251007.txt
+- https://clashfree.github.io/uploads/2025/10/3-20251007.txt
+- https://clashfree.github.io/uploads/2025/10/4-20251007.txt
 
 ### 免费Sing-box节点订阅链接
 
-- https://clashfree.github.io/uploads/2025/10/20251001.json
+- https://clashfree.github.io/uploads/2025/10/20251007.json
 
 ## 更多Clash节点订阅 ：
 
