@@ -170,9 +170,9 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         可通过客户端的协议与节点说明确认是否支持 UDP（例如支持 UDP Relay 或 TUN/TAP 模式）。也可实际用 UDP 测试工具或直接用目标游戏连接进行延迟/丢包测试以验证是否可用。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 是否支持 DNS 分流？</h5></div>
+    <div class="panel-heading"><h5>Clash 的规则模式有哪些？</h5></div>
     <div class="panel-body">
-        支持。Clash 可以自定义 DNS 服务器，并通过 rules 区分国内外域名解析方式。比如国内网站可使用本地 DNS，国外网站可走代理 DNS，从而提升访问速度与稳定性。<hr />    </div>
+        Clash 提供三种主要模式：Global（全局代理）、Rule（规则代理）和Direct（直连）。全局模式会让所有流量通过代理；规则模式根据规则文件自动分流；直连模式则完全不经过代理。用户可根据需求灵活切换。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Hiddify Next 的用户管理可以分组吗？</h5></div>
@@ -180,14 +180,19 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         支持用户分组管理，可为不同组设置独立带宽、流量配额和节点访问权限。分组管理便于大规模用户维护，确保每个组的网络资源合理分配，提升整体管理效率。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Shadowrocket 如何处理域名直连与代理的冲突？</h5></div>
+    <div class="panel-heading"><h5>Sing-box 是否比 Clash 更省资源？</h5></div>
     <div class="panel-body">
-        在 Shadowrocket 的规则管理中优先设置具体规则（如 DOMAIN-KEYWORD 或 DOMAIN-SUFFIX），将直连规则放在规则列表靠前位置，避免被泛用的代理规则覆盖，从而确保特定域名走直连。<hr />    </div>
+        Sing-box 在性能优化上比 Clash 更出色。它采用 Go 语言重构核心模块，并对并发模型进行了优化，内存占用更低，启动速度更快，适合低配置设备或嵌入式环境。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>VLESS 的 Flow 参数有什么作用？</h5></div>
     <div class="panel-body">
         Flow 参数用于控制 VLESS 的传输模式，如 XTLS Vision 或 Reality 模式。它能影响性能、安全性与兼容性，需根据客户端支持情况正确匹配配置。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash 是否支持 DNS 分流？</h5></div>
+    <div class="panel-body">
+        支持。Clash 可以自定义 DNS 服务器，并通过 rules 区分国内外域名解析方式。比如国内网站可使用本地 DNS，国外网站可走代理 DNS，从而提升访问速度与稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Clash 如何实现智能分流？</h5></div>
@@ -205,14 +210,9 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         支持。用户可以在配置中指定 DNS 服务器或启用 DoH/DoT 功能，确保域名解析安全和快速，避免本地 DNS 污染或被劫持。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 的规则模式有哪些？</h5></div>
+    <div class="panel-heading"><h5>Shadowrocket 如何处理域名直连与代理的冲突？</h5></div>
     <div class="panel-body">
-        Clash 提供三种主要模式：Global（全局代理）、Rule（规则代理）和Direct（直连）。全局模式会让所有流量通过代理；规则模式根据规则文件自动分流；直连模式则完全不经过代理。用户可根据需求灵活切换。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 是否比 Clash 更省资源？</h5></div>
-    <div class="panel-body">
-        Sing-box 在性能优化上比 Clash 更出色。它采用 Go 语言重构核心模块，并对并发模型进行了优化，内存占用更低，启动速度更快，适合低配置设备或嵌入式环境。    </div>
+        在 Shadowrocket 的规则管理中优先设置具体规则（如 DOMAIN-KEYWORD 或 DOMAIN-SUFFIX），将直连规则放在规则列表靠前位置，避免被泛用的代理规则覆盖，从而确保特定域名走直连。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -241,16 +241,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-11-6-free-node-subscribe-links.htm" title="11月6日 | 最新Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点高速免费节点地址，最高速度19.5M/S，便宜机场推荐">11月6日 | 最新Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点高速免费节点地址，最高速度19.5M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-9-clash-node.htm" title="11月9日 | 最新Shadowrocket节点/Clash节点/SSR节点/Singbox节点/V2ray节点高速免费节点地址，最高速度19.9M/S，便宜机场推荐">11月9日 | 最新Shadowrocket节点/Clash节点/SSR节点/Singbox节点/V2ray节点高速免费节点地址，最高速度19.9M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-18-free-node-subscribe.htm" title="11月18日 | 最新Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点高速免费节点地址，最高速度22.8M/S，便宜机场推荐">11月18日 | 最新Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点高速免费节点地址，最高速度22.8M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-1-free-node-subscribe.htm" title="12月1日 | 最新Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点高速免费节点地址，最高速度21M/S，便宜机场推荐">12月1日 | 最新Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点高速免费节点地址，最高速度21M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-5-free-clash-subscribe.htm" title="11月5日 | 最新SSR节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点高速免费节点地址，最高速度20.6M/S，便宜机场推荐">11月5日 | 最新SSR节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点高速免费节点地址，最高速度20.6M/S，便宜机场推荐</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-11-12-free-ssr-subscribe.htm" title="11月12日 | 最新V2ray节点/Clash节点/Singbox节点/SSR节点/Shadowrocket节点高速免费节点地址，最高速度22.4M/S，便宜机场推荐">11月12日 | 最新V2ray节点/Clash节点/Singbox节点/SSR节点/Shadowrocket节点高速免费节点地址，最高速度22.4M/S，便宜机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-31-free-node-subscribe-links.htm" title="10月31日 | 最新Singbox节点/V2ray节点/SSR节点/Clash节点/Shadowrocket节点高速免费节点地址，最高速度20.4M/S，便宜机场推荐">10月31日 | 最新Singbox节点/V2ray节点/SSR节点/Clash节点/Shadowrocket节点高速免费节点地址，最高速度20.4M/S，便宜机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-18-free-v2ray-subscribe.htm" title="10月18日 | 最新Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点高速免费节点地址，最高速度21.1M/S，便宜机场推荐">10月18日 | 最新Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点高速免费节点地址，最高速度21.1M/S，便宜机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-7-free-ssr-node.htm" title="10月7日 | 最新SSR节点/Clash节点/V2ray节点/Shadowrocket节点/Singbox节点高速免费节点地址，最高速度20.3M/S，便宜机场推荐">10月7日 | 最新SSR节点/Clash节点/V2ray节点/Shadowrocket节点/Singbox节点高速免费节点地址，最高速度20.3M/S，便宜机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-19-clash-node-daily-updates.htm" title="10月19日 | 最新Clash节点/V2ray节点/Shadowrocket节点/Singbox节点/SSR节点高速免费节点地址，最高速度20.2M/S，便宜机场推荐">10月19日 | 最新Clash节点/V2ray节点/Shadowrocket节点/Singbox节点/SSR节点高速免费节点地址，最高速度20.2M/S，便宜机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-6-shadowrocket-node.htm" title="10月6日 | 最新SSR节点/V2ray节点/Clash节点/Singbox节点/Shadowrocket节点高速免费节点地址，最高速度20.2M/S，便宜机场推荐">10月6日 | 最新SSR节点/V2ray节点/Clash节点/Singbox节点/Shadowrocket节点高速免费节点地址，最高速度20.2M/S，便宜机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-26-free-clash.htm" title="10月26日 | 最新Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点高速免费节点地址，最高速度22M/S，便宜机场推荐">10月26日 | 最新Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点高速免费节点地址，最高速度22M/S，便宜机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-7-clash-node-daily-updates.htm" title="11月7日 | 最新Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点高速免费节点地址，最高速度21.2M/S，便宜机场推荐">11月7日 | 最新Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点高速免费节点地址，最高速度21.2M/S，便宜机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-5-free-clash-subscribe.htm" title="10月5日 | 最新Clash节点/Singbox节点/Shadowrocket节点/SSR节点/V2ray节点高速免费节点地址，最高速度19.7M/S，便宜机场推荐">10月5日 | 最新Clash节点/Singbox节点/Shadowrocket节点/SSR节点/V2ray节点高速免费节点地址，最高速度19.7M/S，便宜机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-8-shadowrocket-node.htm" title="10月8日 | 最新Singbox节点/SSR节点/Shadowrocket节点/V2ray节点/Clash节点高速免费节点地址，最高速度22.8M/S，便宜机场推荐">10月8日 | 最新Singbox节点/SSR节点/Shadowrocket节点/V2ray节点/Clash节点高速免费节点地址，最高速度22.8M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-10-free-clash-subscribe.htm" title="11月10日 | 最新Shadowrocket节点/Clash节点/V2ray节点/Singbox节点/SSR节点高速免费节点地址，最高速度22.2M/S，便宜机场推荐">11月10日 | 最新Shadowrocket节点/Clash节点/V2ray节点/Singbox节点/SSR节点高速免费节点地址，最高速度22.2M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-27-shadowrocket-node.htm" title="11月27日 | 最新Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点高速免费节点地址，最高速度22.7M/S，便宜机场推荐">11月27日 | 最新Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点高速免费节点地址，最高速度22.7M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-28-free-clash-subscribe.htm" title="11月28日 | 最新Clash节点/V2ray节点/Singbox节点/Shadowrocket节点/SSR节点高速免费节点地址，最高速度21.6M/S，便宜机场推荐">11月28日 | 最新Clash节点/V2ray节点/Singbox节点/Shadowrocket节点/SSR节点高速免费节点地址，最高速度21.6M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-19-free-ssr-subscribe.htm" title="11月19日 | 最新Singbox节点/Clash节点/Shadowrocket节点/SSR节点/V2ray节点高速免费节点地址，最高速度20.8M/S，便宜机场推荐">11月19日 | 最新Singbox节点/Clash节点/Shadowrocket节点/SSR节点/V2ray节点高速免费节点地址，最高速度20.8M/S，便宜机场推荐</a></li>
                     </ul>
     </div>
 </div>
@@ -262,10 +262,10 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">16</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
+                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2025-10/" title="2025-10 归档">2025-10</a></h4>
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
             </li>
                     </ul>
     </div>
