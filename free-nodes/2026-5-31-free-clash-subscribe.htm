@@ -245,6 +245,36 @@ force_sni_domain_name <span class="token operator">=</span> <span class="token b
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash 如何通过命令行管理配置？</h5></div>
+    <div class="panel-body">
+        Clash 内置命令行接口，可用于启动、停止、切换配置或查看日志。通过命令行运行 `clash -f config.yaml` 可加载指定配置文件，适合服务器或无人值守场景。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Netch 使用 TAP 驱动时 Windows 弹出网络变更提示，该如何处理？</h5></div>
+    <div class="panel-body">
+        这是正常现象，TAP 虚拟网卡会改变系统网络状态。建议在首次启用时允许驱动安装并授予网络权限，若频繁弹窗可在网络设置中调整网络识别类型或将 TAP 设为非计量连接。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何安全地共享订阅链接而不泄露个人信息？</h5></div>
+    <div class="panel-body">
+        避免将私人订阅直接在公开场合分享，若需要共享可在服务端生成只读或限速专用订阅，并定期更换 token。对外公开时移除或隐藏用户识别字段，确保他人无法通过订阅追溯出个人账户信息。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Potatso Lite 是否支持订阅更新？</h5></div>
+    <div class="panel-body">
+        Potatso Lite 支持通过订阅链接更新节点。用户在设置中输入 URL 后，应用会定期拉取最新配置文件，实现自动更新节点信息。这让日常使用更加便捷和稳定。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VLESS 的 XTLS 模式能提升传输效率吗？</h5></div>
+    <div class="panel-body">
+        XTLS 模式通过减少冗余加密和握手次数，降低延迟，提高吞吐量。在高并发和短连接场景下，效率明显优于普通 TLS，同时保持数据安全性和隐蔽性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Matsuri 支持订阅更新吗？</h5></div>
+    <div class="panel-body">
+        支持。Matsuri 内置订阅更新模块，可自动检测链接变化并定期刷新节点。用户还可手动点击更新按钮同步最新配置，保持网络连接的可用性与速度。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Shadowrocket 节点延迟排序功能如何提升访问体验？</h5></div>
     <div class="panel-body">
         Shadowrocket 会测速节点延迟和丢包率，并优先使用低延迟节点。结合策略组和分流规则，可保证网页、视频和游戏流量通过最优节点，提高访问速度和稳定性。<hr />    </div>
@@ -255,44 +285,14 @@ force_sni_domain_name <span class="token operator">=</span> <span class="token b
         Clash Premium 是 Clash 的增强版，增加了 TUN 模式、脚本功能、流量统计与规则订阅等高级特性。它更适合有复杂分流需求的用户，尤其是需要对系统级代理进行全局控制的场景。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Matsuri 支持订阅更新吗？</h5></div>
+    <div class="panel-heading"><h5>Clash 的规则订阅更新有哪些注意事项？</h5></div>
     <div class="panel-body">
-        支持。Matsuri 内置订阅更新模块，可自动检测链接变化并定期刷新节点。用户还可手动点击更新按钮同步最新配置，保持网络连接的可用性与速度。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS 的 XTLS 模式能提升传输效率吗？</h5></div>
-    <div class="panel-body">
-        XTLS 模式通过减少冗余加密和握手次数，降低延迟，提高吞吐量。在高并发和短连接场景下，效率明显优于普通 TLS，同时保持数据安全性和隐蔽性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Netch 使用 TAP 驱动时 Windows 弹出网络变更提示，该如何处理？</h5></div>
-    <div class="panel-body">
-        这是正常现象，TAP 虚拟网卡会改变系统网络状态。建议在首次启用时允许驱动安装并授予网络权限，若频繁弹窗可在网络设置中调整网络识别类型或将 TAP 设为非计量连接。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 如何通过命令行管理配置？</h5></div>
-    <div class="panel-body">
-        Clash 内置命令行接口，可用于启动、停止、切换配置或查看日志。通过命令行运行 `clash -f config.yaml` 可加载指定配置文件，适合服务器或无人值守场景。<hr />    </div>
+        Clash 订阅更新需保证网络畅通，规则文件格式正确，并与客户端版本兼容。建议定期更新规则以获得最新节点和分流规则，同时注意避免频繁刷新造成性能问题。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Nekobox 是否支持多客户端节点管理？</h5></div>
     <div class="panel-body">
-        支持。Nekobox 与 Shadowsocks、Clash 等客户端独立运行，互不干扰。用户可通过策略组灵活管理节点，实现多客户端分流和网络优化。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Potatso Lite 是否支持订阅更新？</h5></div>
-    <div class="panel-body">
-        Potatso Lite 支持通过订阅链接更新节点。用户在设置中输入 URL 后，应用会定期拉取最新配置文件，实现自动更新节点信息。这让日常使用更加便捷和稳定。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>如何安全地共享订阅链接而不泄露个人信息？</h5></div>
-    <div class="panel-body">
-        避免将私人订阅直接在公开场合分享，若需要共享可在服务端生成只读或限速专用订阅，并定期更换 token。对外公开时移除或隐藏用户识别字段，确保他人无法通过订阅追溯出个人账户信息。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 的规则订阅更新有哪些注意事项？</h5></div>
-    <div class="panel-body">
-        Clash 订阅更新需保证网络畅通，规则文件格式正确，并与客户端版本兼容。建议定期更新规则以获得最新节点和分流规则，同时注意避免频繁刷新造成性能问题。    </div>
+        支持。Nekobox 与 Shadowsocks、Clash 等客户端独立运行，互不干扰。用户可通过策略组灵活管理节点，实现多客户端分流和网络优化。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -342,16 +342,16 @@ force_sni_domain_name <span class="token operator">=</span> <span class="token b
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-5-16-free-shadowrocket-node.htm" title="5月16日 | 最新Singbox节点/Trojan节点/Shadowrocket节点/V2ray节点/Clash节点/SSR节点高速免费节点地址，最高速度20M/S，便宜机场推荐">5月16日 | 最新Singbox节点/Trojan节点/Shadowrocket节点/V2ray节点/Clash节点/SSR节点高速免费节点地址，最高速度20M/S，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-7-free-clash.htm" title="5月7日 | 最新Shadowrocket节点/Singbox节点/Trojan节点/Clash节点/V2ray节点/SSR节点高速免费节点地址，最高速度18.1M/S，便宜机场推荐">5月7日 | 最新Shadowrocket节点/Singbox节点/Trojan节点/Clash节点/V2ray节点/SSR节点高速免费节点地址，最高速度18.1M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-30-shadowrocket-node.htm" title="5月30日 | 最新Shadowrocket节点/Singbox节点/SSR节点/V2ray节点/Clash节点/Trojan节点高速免费节点地址，最高速度19.3M/S，便宜机场推荐">5月30日 | 最新Shadowrocket节点/Singbox节点/SSR节点/V2ray节点/Clash节点/Trojan节点高速免费节点地址，最高速度19.3M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-4-free-clash-subscribe.htm" title="6月4日 | 最新Clash节点/Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Trojan节点高速免费节点地址，最高速度21.9M/S，便宜机场推荐">6月4日 | 最新Clash节点/Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Trojan节点高速免费节点地址，最高速度21.9M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-5-free-subscribe-node.htm" title="6月5日 | 最新Singbox节点/Trojan节点/Shadowrocket节点/SSR节点/Clash节点/V2ray节点高速免费节点地址，最高速度21.4M/S，便宜机场推荐">6月5日 | 最新Singbox节点/Trojan节点/Shadowrocket节点/SSR节点/Clash节点/V2ray节点高速免费节点地址，最高速度21.4M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-11-free-v2ray.htm" title="5月11日 | 最新Clash节点/V2ray节点/SSR节点/Trojan节点/Shadowrocket节点/Singbox节点高速免费节点地址，最高速度21.1M/S，便宜机场推荐">5月11日 | 最新Clash节点/V2ray节点/SSR节点/Trojan节点/Shadowrocket节点/Singbox节点高速免费节点地址，最高速度21.1M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-12-free-subscribe-node.htm" title="5月12日 | 最新Singbox节点/V2ray节点/Trojan节点/Clash节点/Shadowrocket节点/SSR节点高速免费节点地址，最高速度18.8M/S，便宜机场推荐">5月12日 | 最新Singbox节点/V2ray节点/Trojan节点/Clash节点/Shadowrocket节点/SSR节点高速免费节点地址，最高速度18.8M/S，便宜机场推荐</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-5-5-free-shadowrocket-node.htm" title="5月5日 | 最新SSR节点/Clash节点/Shadowrocket节点/Singbox节点/V2ray节点/Trojan节点高速免费节点地址，最高速度19.1M/S，便宜机场推荐">5月5日 | 最新SSR节点/Clash节点/Shadowrocket节点/Singbox节点/V2ray节点/Trojan节点高速免费节点地址，最高速度19.1M/S，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-19-free-subscribe-node.htm" title="5月19日 | 最新Shadowrocket节点/V2ray节点/Singbox节点/Clash节点/SSR节点/Trojan节点高速免费节点地址，最高速度22.7M/S，便宜机场推荐">5月19日 | 最新Shadowrocket节点/V2ray节点/Singbox节点/Clash节点/SSR节点/Trojan节点高速免费节点地址，最高速度22.7M/S，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-2-shadowrocket-node.htm" title="5月2日 | 最新Trojan节点/Singbox节点/V2ray节点/Shadowrocket节点/Clash节点/SSR节点高速免费节点地址，最高速度19.3M/S，便宜机场推荐">5月2日 | 最新Trojan节点/Singbox节点/V2ray节点/Shadowrocket节点/Clash节点/SSR节点高速免费节点地址，最高速度19.3M/S，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-26-clash-windows.htm" title="4月26日 | 最新SSR节点/Shadowrocket节点/Singbox节点/V2ray节点/Trojan节点/Clash节点高速免费节点地址，最高速度22.7M/S，便宜机场推荐">4月26日 | 最新SSR节点/Shadowrocket节点/Singbox节点/V2ray节点/Trojan节点/Clash节点高速免费节点地址，最高速度22.7M/S，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-21-free-ssr-node.htm" title="4月21日 | 最新Singbox节点/Clash节点/V2ray节点/Shadowrocket节点/Trojan节点/SSR节点高速免费节点地址，最高速度21.7M/S，便宜机场推荐">4月21日 | 最新Singbox节点/Clash节点/V2ray节点/Shadowrocket节点/Trojan节点/SSR节点高速免费节点地址，最高速度21.7M/S，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-29-clash-node-daily-updates.htm" title="5月29日 | 最新Clash节点/Trojan节点/Singbox节点/Shadowrocket节点/V2ray节点/SSR节点高速免费节点地址，最高速度22.4M/S，便宜机场推荐">5月29日 | 最新Clash节点/Trojan节点/Singbox节点/Shadowrocket节点/V2ray节点/SSR节点高速免费节点地址，最高速度22.4M/S，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-28-free-shadowrocket-node.htm" title="4月28日 | 最新SSR节点/Singbox节点/Trojan节点/Shadowrocket节点/Clash节点/V2ray节点高速免费节点地址，最高速度18.6M/S，便宜机场推荐">4月28日 | 最新SSR节点/Singbox节点/Trojan节点/Shadowrocket节点/Clash节点/V2ray节点高速免费节点地址，最高速度18.6M/S，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-22-node-share.htm" title="4月22日 | 最新Shadowrocket节点/Singbox节点/SSR节点/Trojan节点/V2ray节点/Clash节点高速免费节点地址，最高速度21M/S，便宜机场推荐">4月22日 | 最新Shadowrocket节点/Singbox节点/SSR节点/Trojan节点/V2ray节点/Clash节点高速免费节点地址，最高速度21M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-6-clash-windows.htm" title="5月6日 | 最新V2ray节点/Singbox节点/SSR节点/Clash节点/Shadowrocket节点/Trojan节点高速免费节点地址，最高速度22.7M/S，便宜机场推荐">5月6日 | 最新V2ray节点/Singbox节点/SSR节点/Clash节点/Shadowrocket节点/Trojan节点高速免费节点地址，最高速度22.7M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-6-node-share-links.htm" title="6月6日 | 最新Singbox节点/V2ray节点/SSR节点/Trojan节点/Shadowrocket节点/Clash节点高速免费节点地址，最高速度19.7M/S，便宜机场推荐">6月6日 | 最新Singbox节点/V2ray节点/SSR节点/Trojan节点/Shadowrocket节点/Clash节点高速免费节点地址，最高速度19.7M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-14-free-shadowrocket-node.htm" title="5月14日 | 最新Singbox节点/Shadowrocket节点/Clash节点/Trojan节点/SSR节点/V2ray节点高速免费节点地址，最高速度20.6M/S，便宜机场推荐">5月14日 | 最新Singbox节点/Shadowrocket节点/Clash节点/Trojan节点/SSR节点/V2ray节点高速免费节点地址，最高速度20.6M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-4-node-share.htm" title="5月4日 | 最新Clash节点/Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Trojan节点高速免费节点地址，最高速度22.3M/S，便宜机场推荐">5月4日 | 最新Clash节点/Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Trojan节点高速免费节点地址，最高速度22.3M/S，便宜机场推荐</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -363,13 +363,10 @@ force_sni_domain_name <span class="token operator">=</span> <span class="token b
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">1</span> <a href="/date/2026-06/" title="2026-06 归档">2026-06</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2026-06/" title="2026-06 归档">2026-06</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
+                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
             </li>
                     </ul>
     </div>
