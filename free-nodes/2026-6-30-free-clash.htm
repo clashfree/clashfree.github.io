@@ -252,14 +252,9 @@ sudo apt install unzip tar
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Netch 如何结合策略组实现多节点优化？</h5></div>
+    <div class="panel-heading"><h5>Surfboard 如何结合规则实现智能节点切换？</h5></div>
     <div class="panel-body">
-        Netch 可按应用和协议设置策略组，将流量分配到最优节点。结合节点延迟检测和自动切换功能，可提高网页浏览、视频播放和游戏访问速度及稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 的日志记录如何帮助排错？</h5></div>
-    <div class="panel-body">
-        WinXray 提供详细的连接日志，包括入站、出站流量信息及错误提示。通过查看日志，用户可以快速定位连接失败、节点不可达或配置错误的原因，提高问题解决效率。<hr />    </div>
+        Surfboard 可根据规则文件和策略组自动选择延迟低、稳定性高的节点处理流量。不同应用流量可分配不同节点，优化访问速度和稳定性，减少手动切换节点的操作。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Trojan 的伪装域名为什么重要？</h5></div>
@@ -267,29 +262,14 @@ sudo apt install unzip tar
         伪装域名必须真实可访问且证书有效，以使流量看起来像普通 HTTPS 请求。正确配置可以降低被封锁和 DPI 检测风险，提高节点安全性和长期可用性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Surfboard 如何结合规则实现智能节点切换？</h5></div>
-    <div class="panel-body">
-        Surfboard 可根据规则文件和策略组自动选择延迟低、稳定性高的节点处理流量。不同应用流量可分配不同节点，优化访问速度和稳定性，减少手动切换节点的操作。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekobox 和 Nekoray 有何关系？</h5></div>
-    <div class="panel-body">
-        Nekobox 是 Nekoray 的移动端衍生版，界面简洁，主要适配 Android 平台。两者使用同样的核心逻辑与配置结构，因此订阅文件和节点信息可以兼容共享。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 是什么？它与 Shadowsocks 有何不同？</h5></div>
-    <div class="panel-body">
-        SSR（ShadowsocksR）是 Shadowsocks 的增强版本，增加了多种混淆与加密方式，提高了抗封锁能力。与原版相比，SSR 的兼容性更强，但目前已停止维护，许多用户正逐渐迁移到更先进的 V2Ray 或 Trojan 协议上。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Sing-box 如何实现精确域名分流？</h5></div>
     <div class="panel-body">
         Sing-box 可以按域名设置分流规则，将不同流量发送到指定节点。结合策略组使用，可实现网页、视频和游戏流量精准分配，提高访问速度和网络稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 的 TLS 配置如何增强抗封锁能力？</h5></div>
+    <div class="panel-heading"><h5>Netch 如何结合策略组实现多节点优化？</h5></div>
     <div class="panel-body">
-        TLS 配置可将流量伪装成正常 HTTPS 请求，隐藏真实数据特征。结合域名伪装、WebSocket 或 QUIC 等传输方式，可有效绕过封锁，提高节点长期可用性和连接稳定性。<hr />    </div>
+        Netch 可按应用和协议设置策略组，将流量分配到最优节点。结合节点延迟检测和自动切换功能，可提高网页浏览、视频播放和游戏访问速度及稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>PassWall2 的“节点切换策略”如何配置？</h5></div>
@@ -297,9 +277,29 @@ sudo apt install unzip tar
         在 PassWall2 中可设置多节点策略，如“按延迟排序”、“自动选择最快节点”等。程序会定期测速，根据实时数据自动切换线路，保证连接的稳定性和速度。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>SSR 是什么？它与 Shadowsocks 有何不同？</h5></div>
+    <div class="panel-body">
+        SSR（ShadowsocksR）是 Shadowsocks 的增强版本，增加了多种混淆与加密方式，提高了抗封锁能力。与原版相比，SSR 的兼容性更强，但目前已停止维护，许多用户正逐渐迁移到更先进的 V2Ray 或 Trojan 协议上。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Sing-box 如何按端口分流流量？</h5></div>
     <div class="panel-body">
-        Sing-box 支持根据端口匹配流量，将不同应用流量分配到指定节点。结合策略组使用，可精准分流，提高访问速度和网络稳定性，优化整体网络体验。    </div>
+        Sing-box 支持根据端口匹配流量，将不同应用流量分配到指定节点。结合策略组使用，可精准分流，提高访问速度和网络稳定性，优化整体网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray 的 TLS 配置如何增强抗封锁能力？</h5></div>
+    <div class="panel-body">
+        TLS 配置可将流量伪装成正常 HTTPS 请求，隐藏真实数据特征。结合域名伪装、WebSocket 或 QUIC 等传输方式，可有效绕过封锁，提高节点长期可用性和连接稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 的日志记录如何帮助排错？</h5></div>
+    <div class="panel-body">
+        WinXray 提供详细的连接日志，包括入站、出站流量信息及错误提示。通过查看日志，用户可以快速定位连接失败、节点不可达或配置错误的原因，提高问题解决效率。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekobox 和 Nekoray 有何关系？</h5></div>
+    <div class="panel-body">
+        Nekobox 是 Nekoray 的移动端衍生版，界面简洁，主要适配 Android 平台。两者使用同样的核心逻辑与配置结构，因此订阅文件和节点信息可以兼容共享。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -329,15 +329,13 @@ sudo apt install unzip tar
     <div class="panel-body">
         <div class="row">
             <div class="text-center">
-                <a href="javascript:;" class="js_to" data-url="https://www.futizi.net/?code=" data-type="Luniuyun" data-code="svvkQf3y" target="_blank">
-                    <img src="/assets/website/img/G/luniuyun.webp" class="avatar" alt="绿牛云">
+                <a href="javascript:;" class="js_to" data-url="https://c.kilxs.cn/?path=register&code=" data-type="Xingchen" data-code="tlc6gYYx" target="_blank">
+                    <img src="/assets/website/img/G/xingchen.webp" class="avatar" alt="星辰机场">
                 </a>
                 <dl>
-                    <dt><a href="javascript:;" class="js_to" data-url="https://www.futizi.net/?code=" data-type="Luniuyun" data-code="svvkQf3y" target="_blank">绿牛云</a></dt>
+                    <dt><a href="javascript:;" class="js_to" data-url="https://c.kilxs.cn/?path=register&code=" data-type="Xingchen" data-code="tlc6gYYx" target="_blank">星辰机场</a></dt>
                     <dd>
-                        <p>高速稳定的网络加速</p>
-                        <p>畅享全球内容，访问 ChatGPT、TikTok、Google 等热门网站。
-全平台支持 · 7×24 专业客服 · 采用军工级安全加密传输技术。</p>                    </dd>
+                        <p>【包年送2个月】</p><p>1、购买入门版年付套餐额外送2个月，共14个月，只要99元！！！</p><p>2、购买“至尊天皇”年付套餐，额外送2个月，只要299元！！！</p><p>3、购买其他包月类套餐中的年付，同样送2个月！！！</p><p>错过要再等一年！！</p>                    </dd>
                 </dl>
             </div>
         </div>
@@ -349,16 +347,16 @@ sudo apt install unzip tar
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-5-24-clash-v2ray-ss-ssr.htm" title="5月24日 | 最新Trojan节点/Shadowrocket节点/V2ray节点/Clash节点/SSR节点/Singbox节点高速免费节点地址，最高速度21.7M/S，便宜机场推荐">5月24日 | 最新Trojan节点/Shadowrocket节点/V2ray节点/Clash节点/SSR节点/Singbox节点高速免费节点地址，最高速度21.7M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-29-free-ssr-node.htm" title="6月29日 | 最新Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Trojan节点高速免费节点地址，最高速度22.9M/S，便宜机场推荐">6月29日 | 最新Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Trojan节点高速免费节点地址，最高速度22.9M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-7-5-shadowrocket-node.htm" title="7月5日 | 最新Singbox节点/Shadowrocket节点/Trojan节点/Clash节点/SSR节点/V2ray节点高速免费节点地址，最高速度22.5M/S，便宜机场推荐">7月5日 | 最新Singbox节点/Shadowrocket节点/Trojan节点/Clash节点/SSR节点/V2ray节点高速免费节点地址，最高速度22.5M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-8-free-ssr-subscribe.htm" title="6月8日 | 最新Singbox节点/SSR节点/Trojan节点/V2ray节点/Clash节点/Shadowrocket节点高速免费节点地址，最高速度20.3M/S，便宜机场推荐">6月8日 | 最新Singbox节点/SSR节点/Trojan节点/V2ray节点/Clash节点/Shadowrocket节点高速免费节点地址，最高速度20.3M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-21-clash-windows.htm" title="6月21日 | 最新Shadowrocket节点/SSR节点/Clash节点/Singbox节点/V2ray节点/Trojan节点高速免费节点地址，最高速度18.3M/S，便宜机场推荐">6月21日 | 最新Shadowrocket节点/SSR节点/Clash节点/Singbox节点/V2ray节点/Trojan节点高速免费节点地址，最高速度18.3M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-13-free-high-speed-nodes.htm" title="6月13日 | 最新Clash节点/Trojan节点/SSR节点/Shadowrocket节点/Singbox节点/V2ray节点高速免费节点地址，最高速度22.4M/S，便宜机场推荐">6月13日 | 最新Clash节点/Trojan节点/SSR节点/Shadowrocket节点/Singbox节点/V2ray节点高速免费节点地址，最高速度22.4M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-17-free-clash-subscribe.htm" title="6月17日 | 最新SSR节点/Singbox节点/Trojan节点/V2ray节点/Clash节点/Shadowrocket节点高速免费节点地址，最高速度18.3M/S，便宜机场推荐">6月17日 | 最新SSR节点/Singbox节点/Trojan节点/V2ray节点/Clash节点/Shadowrocket节点高速免费节点地址，最高速度18.3M/S，便宜机场推荐</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-7-1-node-share-links.htm" title="7月1日 | 最新SSR节点/V2ray节点/Trojan节点/Shadowrocket节点/Clash节点/Singbox节点高速免费节点地址，最高速度18.2M/S，便宜机场推荐">7月1日 | 最新SSR节点/V2ray节点/Trojan节点/Shadowrocket节点/Clash节点/Singbox节点高速免费节点地址，最高速度18.2M/S，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-6-3-clash-windows.htm" title="6月3日 | 最新Shadowrocket节点/SSR节点/Clash节点/Trojan节点/V2ray节点/Singbox节点高速免费节点地址，最高速度18.6M/S，便宜机场推荐">6月3日 | 最新Shadowrocket节点/SSR节点/Clash节点/Trojan节点/V2ray节点/Singbox节点高速免费节点地址，最高速度18.6M/S，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-3-free-clash.htm" title="5月3日 | 最新Shadowrocket节点/Clash节点/SSR节点/Singbox节点/V2ray节点/Trojan节点高速免费节点地址，最高速度22.1M/S，便宜机场推荐">5月3日 | 最新Shadowrocket节点/Clash节点/SSR节点/Singbox节点/V2ray节点/Trojan节点高速免费节点地址，最高速度22.1M/S，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-10-free-ssr-subscribe.htm" title="5月10日 | 最新Clash节点/Singbox节点/Shadowrocket节点/SSR节点/Trojan节点/V2ray节点高速免费节点地址，最高速度21.6M/S，便宜机场推荐">5月10日 | 最新Clash节点/Singbox节点/Shadowrocket节点/SSR节点/Trojan节点/V2ray节点高速免费节点地址，最高速度21.6M/S，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-6-18-free-clash.htm" title="6月18日 | 最新Trojan节点/V2ray节点/Shadowrocket节点/SSR节点/Singbox节点/Clash节点高速免费节点地址，最高速度23M/S，便宜机场推荐">6月18日 | 最新Trojan节点/V2ray节点/Shadowrocket节点/SSR节点/Singbox节点/Clash节点高速免费节点地址，最高速度23M/S，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-6-16-node-share.htm" title="6月16日 | 最新SSR节点/Clash节点/Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点高速免费节点地址，最高速度23M/S，便宜机场推荐">6月16日 | 最新SSR节点/Clash节点/Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点高速免费节点地址，最高速度23M/S，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-6-14-free-node-subscribe.htm" title="6月14日 | 最新Trojan节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Singbox节点高速免费节点地址，最高速度20.5M/S，便宜机场推荐">6月14日 | 最新Trojan节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Singbox节点高速免费节点地址，最高速度20.5M/S，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-8-clash-node-daily-updates.htm" title="5月8日 | 最新Trojan节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Clash节点高速免费节点地址，最高速度19M/S，便宜机场推荐">5月8日 | 最新Trojan节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Clash节点高速免费节点地址，最高速度19M/S，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-31-free-clash-subscribe.htm" title="5月31日 | 最新V2ray节点/SSR节点/Singbox节点/Trojan节点/Clash节点/Shadowrocket节点高速免费节点地址，最高速度19.5M/S，便宜机场推荐">5月31日 | 最新V2ray节点/SSR节点/Singbox节点/Trojan节点/Clash节点/Shadowrocket节点高速免费节点地址，最高速度19.5M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-11-free-node-subscribe-links.htm" title="6月11日 | 最新Trojan节点/Singbox节点/SSR节点/V2ray节点/Clash节点/Shadowrocket节点高速免费节点地址，最高速度21M/S，便宜机场推荐">6月11日 | 最新Trojan节点/Singbox节点/SSR节点/V2ray节点/Clash节点/Shadowrocket节点高速免费节点地址，最高速度21M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-20-free-node-subscribe.htm" title="6月20日 | 最新V2ray节点/Clash节点/Singbox节点/Trojan节点/SSR节点/Shadowrocket节点高速免费节点地址，最高速度19.1M/S，便宜机场推荐">6月20日 | 最新V2ray节点/Clash节点/Singbox节点/Trojan节点/SSR节点/Shadowrocket节点高速免费节点地址，最高速度19.1M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-26-clash-node.htm" title="6月26日 | 最新SSR节点/Clash节点/V2ray节点/Shadowrocket节点/Singbox节点/Trojan节点高速免费节点地址，最高速度22.1M/S，便宜机场推荐">6月26日 | 最新SSR节点/Clash节点/V2ray节点/Shadowrocket节点/Singbox节点/Trojan节点高速免费节点地址，最高速度22.1M/S，便宜机场推荐</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -370,13 +368,10 @@ sudo apt install unzip tar
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">1</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
+                <h4><span class="badge" style="float: right;">8</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2026-06/" title="2026-06 归档">2026-06</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2026-06/" title="2026-06 归档">2026-06</a></h4>
             </li>
                     </ul>
     </div>
@@ -404,9 +399,7 @@ sudo apt install unzip tar
                         <a href="/privacy.htm">隐私申明</a> |
                         <a href="/sitemap.xml">网站地图</a>
                     </p>
-                                        <div>特别推荐：<b><a href="javascript:;" class="js_to" data-url="https://www.futizi.net/?code=" data-type="Luniuyun" data-code="svvkQf3y" target="_blank">绿牛云</a></b> <p>高速稳定的网络加速</p>
-                        <p>畅享全球内容，访问 ChatGPT、TikTok、Google 等热门网站。
-全平台支持 · 7×24 专业客服 · 采用军工级安全加密传输技术。</p></div>
+                                        <div>特别推荐：<b><a href="javascript:;" class="js_to" data-url="https://c.kilxs.cn/?path=register&code=" data-type="Xingchen" data-code="tlc6gYYx" target="_blank">星辰机场</a></b> <p>【包年送2个月】</p><p>1、购买入门版年付套餐额外送2个月，共14个月，只要99元！！！</p><p>2、购买“至尊天皇”年付套餐，额外送2个月，只要299元！！！</p><p>3、购买其他包月类套餐中的年付，同样送2个月！！！</p><p>错过要再等一年！！</p></div>
                                     <p class="col-lg-8 copy-footer-29">
                     ClashFree节点免费订阅站 版权所有
                     <br />
