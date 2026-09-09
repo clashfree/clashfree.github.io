@@ -349,14 +349,9 @@ opkg install v2ray-core
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS + XTLS 如何在高延迟网络中优化连接？</h5></div>
+    <div class="panel-heading"><h5>WinXray PAC 模式如何提高访问速度和便利性？</h5></div>
     <div class="panel-body">
-        XTLS 模式通过减少握手和加密开销降低延迟。结合策略组和多节点切换，可在高延迟或不稳定网络环境下保证网页浏览、视频播放和游戏连接稳定，提高整体体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Hysteria2 支持多用户配置吗？</h5></div>
-    <div class="panel-body">
-        Hysteria2 支持多用户配置，管理员可以在服务器端为不同用户分配独立凭证。这样既能保障隐私，也便于流量统计和限速控制，适合团队或小型共享环境。<hr />    </div>
+        PAC 模式根据规则动态判断流量是否走代理，无需手动切换节点。适合国内外混合访问场景，提高网页和视频访问速度与稳定性，减少操作错误导致的访问失败。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Hysteria2 多路复用在短连接中优势是什么？</h5></div>
@@ -364,29 +359,9 @@ opkg install v2ray-core
         多路复用允许多个短连接共享同一通道，减少握手延迟和资源消耗。适合高频短连接场景，如游戏和即时通讯，提升吞吐量和连接稳定性，优化网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>如何在 Android 手机上使用 Clash for Android？</h5></div>
+    <div class="panel-heading"><h5>VLESS + XTLS 如何在高延迟网络中优化连接？</h5></div>
     <div class="panel-body">
-        Clash for Android 是专为移动设备开发的客户端，安装后导入订阅链接即可使用。用户可设置代理模式（全局、规则、自定义）并查看实时流量信息。它的电量消耗较低，适合长期后台运行。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan 的伪装域名配置有哪些注意事项？</h5></div>
-    <div class="panel-body">
-        伪装域名必须真实可访问且证书有效，否则无法建立连接。正确配置可隐藏真实流量特征，降低被封锁和检测风险，提高节点安全性和长期可用性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 是否支持 DNS 分流？</h5></div>
-    <div class="panel-body">
-        支持。Clash 可以自定义 DNS 服务器，并通过 rules 区分国内外域名解析方式。比如国内网站可使用本地 DNS，国外网站可走代理 DNS，从而提升访问速度与稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 如何实现域名白名单策略？</h5></div>
-    <div class="panel-body">
-        Clash 可以通过策略组结合规则文件，将指定域名或网站加入白名单，实现直连而不经过代理节点。这样可以保证国内访问速度，同时节省节点带宽资源，提高整体网络效率。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray PAC 模式如何提高访问速度和便利性？</h5></div>
-    <div class="panel-body">
-        PAC 模式根据规则动态判断流量是否走代理，无需手动切换节点。适合国内外混合访问场景，提高网页和视频访问速度与稳定性，减少操作错误导致的访问失败。<hr />    </div>
+        XTLS 模式通过减少握手和加密开销降低延迟。结合策略组和多节点切换，可在高延迟或不稳定网络环境下保证网页浏览、视频播放和游戏连接稳定，提高整体体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Netch 的规则代理与全局代理如何选择？</h5></div>
@@ -394,9 +369,34 @@ opkg install v2ray-core
         全局代理会将所有流量通过节点转发，而规则代理只针对指定 IP、端口或应用。用户可根据需求选择，以优化带宽利用和流量分流，确保不同应用的最佳体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Trojan 的伪装域名配置有哪些注意事项？</h5></div>
+    <div class="panel-body">
+        伪装域名必须真实可访问且证书有效，否则无法建立连接。正确配置可隐藏真实流量特征，降低被封锁和检测风险，提高节点安全性和长期可用性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Hysteria2 支持多用户配置吗？</h5></div>
+    <div class="panel-body">
+        Hysteria2 支持多用户配置，管理员可以在服务器端为不同用户分配独立凭证。这样既能保障隐私，也便于流量统计和限速控制，适合团队或小型共享环境。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash 是否支持 DNS 分流？</h5></div>
+    <div class="panel-body">
+        支持。Clash 可以自定义 DNS 服务器，并通过 rules 区分国内外域名解析方式。比如国内网站可使用本地 DNS，国外网站可走代理 DNS，从而提升访问速度与稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Matsuri 节点延迟排序如何优化网络流量？</h5></div>
     <div class="panel-body">
-        Matsuri 会定期测速节点延迟，并结合策略组自动选择延迟最低节点。无需手动切换，确保网页、视频和游戏流量通过最优节点，提高访问速度和网络稳定性。    </div>
+        Matsuri 会定期测速节点延迟，并结合策略组自动选择延迟最低节点。无需手动切换，确保网页、视频和游戏流量通过最优节点，提高访问速度和网络稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何在 Android 手机上使用 Clash for Android？</h5></div>
+    <div class="panel-body">
+        Clash for Android 是专为移动设备开发的客户端，安装后导入订阅链接即可使用。用户可设置代理模式（全局、规则、自定义）并查看实时流量信息。它的电量消耗较低，适合长期后台运行。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash 如何实现域名白名单策略？</h5></div>
+    <div class="panel-body">
+        Clash 可以通过策略组结合规则文件，将指定域名或网站加入白名单，实现直连而不经过代理节点。这样可以保证国内访问速度，同时节省节点带宽资源，提高整体网络效率。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -444,16 +444,16 @@ opkg install v2ray-core
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-8-20-free-v2ray.htm" title="8月20日 | 最新Singbox节点/Clash节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点高速免费节点地址，最高速度18.3M/S，便宜机场推荐">8月20日 | 最新Singbox节点/Clash节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点高速免费节点地址，最高速度18.3M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-10-free-v2ray.htm" title="8月10日 | 最新Shadowrocket节点/SSR节点/V2ray节点/Singbox节点/Trojan节点/Clash节点高速免费节点地址，最高速度20.7M/S，便宜机场推荐">8月10日 | 最新Shadowrocket节点/SSR节点/V2ray节点/Singbox节点/Trojan节点/Clash节点高速免费节点地址，最高速度20.7M/S，便宜机场推荐</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/free-v2ray-subscribe-2026-8-23.htm" title="8月23日 | 最新Shadowrocket节点/Clash节点/V2ray节点/Trojan节点/SSR节点/Singbox节点高速免费节点地址，最高速度18.7M/S，便宜机场推荐">8月23日 | 最新Shadowrocket节点/Clash节点/V2ray节点/Trojan节点/SSR节点/Singbox节点高速免费节点地址，最高速度18.7M/S，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-8-5.htm" title="8月5日 | 最新Clash节点/Shadowrocket节点/SSR节点/Trojan节点/V2ray节点/Singbox节点高速免费节点地址，最高速度20M/S，便宜机场推荐">8月5日 | 最新Clash节点/Shadowrocket节点/SSR节点/Trojan节点/V2ray节点/Singbox节点高速免费节点地址，最高速度20M/S，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-27-shadowrocket-node.htm" title="7月27日 | 最新V2ray节点/Trojan节点/SSR节点/Shadowrocket节点/Clash节点/Singbox节点高速免费节点地址，最高速度19.3M/S，便宜机场推荐">7月27日 | 最新V2ray节点/Trojan节点/SSR节点/Shadowrocket节点/Clash节点/Singbox节点高速免费节点地址，最高速度19.3M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-22-free-node-subscribe.htm" title="8月22日 | 最新Clash节点/Shadowrocket节点/Singbox节点/SSR节点/Trojan节点/V2ray节点高速免费节点地址，最高速度19.6M/S，便宜机场推荐">8月22日 | 最新Clash节点/Shadowrocket节点/Singbox节点/SSR节点/Trojan节点/V2ray节点高速免费节点地址，最高速度19.6M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/shadowrocket-node-2026-8-21.htm" title="8月21日 | 最新Singbox节点/SSR节点/Clash节点/V2ray节点/Shadowrocket节点/Trojan节点高速免费节点地址，最高速度21.1M/S，便宜机场推荐">8月21日 | 最新Singbox节点/SSR节点/Clash节点/V2ray节点/Shadowrocket节点/Trojan节点高速免费节点地址，最高速度21.1M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/clash-windows-2026-8-9.htm" title="8月9日 | 最新V2ray节点/Trojan节点/Singbox节点/SSR节点/Clash节点/Shadowrocket节点高速免费节点地址，最高速度18.8M/S，便宜机场推荐">8月9日 | 最新V2ray节点/Trojan节点/Singbox节点/SSR节点/Clash节点/Shadowrocket节点高速免费节点地址，最高速度18.8M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/shadowrocket-node-2026-8-27.htm" title="8月27日 | 最新Trojan节点/V2ray节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点高速免费节点地址，最高速度19.5M/S，便宜机场推荐">8月27日 | 最新Trojan节点/V2ray节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点高速免费节点地址，最高速度19.5M/S，便宜机场推荐</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-8-25.htm" title="8月25日 | 最新Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点/Trojan节点高速免费节点地址，最高速度20.9M/S，便宜机场推荐">8月25日 | 最新Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点/Trojan节点高速免费节点地址，最高速度20.9M/S，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-clash-subscribe-2026-7-31.htm" title="7月31日 | 最新V2ray节点/Trojan节点/Clash节点/Singbox节点/Shadowrocket节点/SSR节点高速免费节点地址，最高速度18.1M/S，便宜机场推荐">7月31日 | 最新V2ray节点/Trojan节点/Clash节点/Singbox节点/Shadowrocket节点/SSR节点高速免费节点地址，最高速度18.1M/S，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-2-free-node-subscribe.htm" title="8月2日 | 最新Trojan节点/SSR节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点高速免费节点地址，最高速度21.1M/S，便宜机场推荐">8月2日 | 最新Trojan节点/SSR节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点高速免费节点地址，最高速度21.1M/S，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-8-free-clash.htm" title="8月8日 | 最新Singbox节点/Clash节点/V2ray节点/Shadowrocket节点/Trojan节点/SSR节点高速免费节点地址，最高速度22.5M/S，便宜机场推荐">8月8日 | 最新Singbox节点/Clash节点/V2ray节点/Shadowrocket节点/Trojan节点/SSR节点高速免费节点地址，最高速度22.5M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-18-clash-node-daily-updates.htm" title="8月18日 | 最新Singbox节点/Shadowrocket节点/V2ray节点/SSR节点/Clash节点/Trojan节点高速免费节点地址，最高速度22.5M/S，便宜机场推荐">8月18日 | 最新Singbox节点/Shadowrocket节点/V2ray节点/SSR节点/Clash节点/Trojan节点高速免费节点地址，最高速度22.5M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-14-clash-node-daily-updates.htm" title="8月14日 | 最新Trojan节点/Shadowrocket节点/Clash节点/SSR节点/Singbox节点/V2ray节点高速免费节点地址，最高速度22.1M/S，便宜机场推荐">8月14日 | 最新Trojan节点/Shadowrocket节点/Clash节点/SSR节点/Singbox节点/V2ray节点高速免费节点地址，最高速度22.1M/S，便宜机场推荐</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-8-6-clash-v2ray-ss-ssr.htm" title="8月6日 | 最新V2ray节点/Singbox节点/Clash节点/Trojan节点/Shadowrocket节点/SSR节点高速免费节点地址，最高速度22.5M/S，便宜机场推荐">8月6日 | 最新V2ray节点/Singbox节点/Clash节点/Trojan节点/Shadowrocket节点/SSR节点高速免费节点地址，最高速度22.5M/S，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-clash-subscribe-2026-8-3.htm" title="8月3日 | 最新Shadowrocket节点/SSR节点/V2ray节点/Trojan节点/Singbox节点/Clash节点高速免费节点地址，最高速度22.6M/S，便宜机场推荐">8月3日 | 最新Shadowrocket节点/SSR节点/V2ray节点/Trojan节点/Singbox节点/Clash节点高速免费节点地址，最高速度22.6M/S，便宜机场推荐</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -465,10 +465,10 @@ opkg install v2ray-core
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
+                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
+                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
             </li>
                     </ul>
     </div>
