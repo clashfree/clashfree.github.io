@@ -349,14 +349,9 @@ opkg install v2ray-core
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>QuantumultX 的脚本功能能实现哪些高级操作？</h5></div>
+    <div class="panel-heading"><h5>Mellow TUN 模式如何拦截全局流量？</h5></div>
     <div class="panel-body">
-        QuantumultX 支持 JavaScript 脚本，可用于请求重写、数据修改、自动签到、广告拦截等功能。用户可通过脚本中心导入开源脚本，极大增强应用的灵活性与自动化能力。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 如何通过策略组优化访问速度？</h5></div>
-    <div class="panel-body">
-        策略组允许用户将节点按延迟、地域或用途分组。结合路由规则，V2Ray 会自动选择最优节点处理流量，提升访问速度并降低延迟，尤其在访问海外网站时效果明显。<hr />    </div>
+        TUN 模式会拦截系统 IP 层的所有流量，实现全局代理。相比 SOCKS5 只影响部分应用，TUN 可以覆盖游戏、视频和浏览器等所有流量，提高科学上网体验的全面性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>V2RayN 的 GUI 界面如何导出节点？</h5></div>
@@ -364,9 +359,14 @@ opkg install v2ray-core
         V2RayN 提供节点导出功能，可生成分享链接或二维码。用户右键节点选择“分享”即可导出，以便在其他设备导入同样的代理配置，保持同步使用体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 的路由规则可设置哪些匹配条件？</h5></div>
+    <div class="panel-heading"><h5>使用 Reality 协议后，客户端与服务端的密钥如何管理？</h5></div>
     <div class="panel-body">
-        路由规则支持按域名、IP 地址、端口、协议类型或用户标签进行匹配。结合策略组，可实现国内直连、国外代理或特定节点定向分流，满足不同网络需求。<hr />    </div>
+        Reality 使用公私钥对进行认证，应生成唯一的公私钥对并妥善保存私钥，公钥可部署在服务端配置中。避免在多个服务共享同一密钥，定期轮换密钥并通过安全通道传输公钥以防泄露。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>QuantumultX 的脚本功能能实现哪些高级操作？</h5></div>
+    <div class="panel-body">
+        QuantumultX 支持 JavaScript 脚本，可用于请求重写、数据修改、自动签到、广告拦截等功能。用户可通过脚本中心导入开源脚本，极大增强应用的灵活性与自动化能力。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>如何在 Windows 上安装 Clash for Windows？</h5></div>
@@ -374,14 +374,14 @@ opkg install v2ray-core
         在 Windows 上安装 Clash for Windows 十分简单。只需前往官方 GitHub 页面下载最新版安装包，运行安装程序后导入订阅链接或配置文件即可。安装完成后，用户可以通过图形化界面方便地切换节点、编辑规则和控制代理模式。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Mellow TUN 模式如何拦截全局流量？</h5></div>
+    <div class="panel-heading"><h5>V2Ray 如何通过策略组优化访问速度？</h5></div>
     <div class="panel-body">
-        TUN 模式会拦截系统 IP 层的所有流量，实现全局代理。相比 SOCKS5 只影响部分应用，TUN 可以覆盖游戏、视频和浏览器等所有流量，提高科学上网体验的全面性。<hr />    </div>
+        策略组允许用户将节点按延迟、地域或用途分组。结合路由规则，V2Ray 会自动选择最优节点处理流量，提升访问速度并降低延迟，尤其在访问海外网站时效果明显。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>使用 Reality 协议后，客户端与服务端的密钥如何管理？</h5></div>
+    <div class="panel-heading"><h5>Mellow 的 TUN 模式与系统全局代理有何区别？</h5></div>
     <div class="panel-body">
-        Reality 使用公私钥对进行认证，应生成唯一的公私钥对并妥善保存私钥，公钥可部署在服务端配置中。避免在多个服务共享同一密钥，定期轮换密钥并通过安全通道传输公钥以防泄露。<hr />    </div>
+        TUN 模式直接拦截 IP 层流量，不依赖应用代理设置，系统全局代理通常只影响支持 HTTP/HTTPS 的程序。TUN 更适合全局科学上网和游戏环境。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>VLess 与 Reality 协议可以结合使用吗？</h5></div>
@@ -389,14 +389,14 @@ opkg install v2ray-core
         可以。VLess + Reality 是目前最受欢迎的组合之一。它在无证书情况下实现加密传输，同时具备隐蔽性与速度优势，非常适合需要安全访问的高级代理配置。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekobox 是否可以管理多客户端节点？</h5></div>
+    <div class="panel-heading"><h5>V2Ray 的路由规则可设置哪些匹配条件？</h5></div>
     <div class="panel-body">
-        可以。Nekobox 与 Shadowsocks、Clash 等客户端独立运行，互不干扰。结合策略组使用，可灵活分配节点，实现多客户端管理和流量优化。<hr />    </div>
+        路由规则支持按域名、IP 地址、端口、协议类型或用户标签进行匹配。结合策略组，可实现国内直连、国外代理或特定节点定向分流，满足不同网络需求。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Mellow 的 TUN 模式与系统全局代理有何区别？</h5></div>
+    <div class="panel-heading"><h5>Nekobox 是否可以管理多客户端节点？</h5></div>
     <div class="panel-body">
-        TUN 模式直接拦截 IP 层流量，不依赖应用代理设置，系统全局代理通常只影响支持 HTTP/HTTPS 的程序。TUN 更适合全局科学上网和游戏环境。    </div>
+        可以。Nekobox 与 Shadowsocks、Clash 等客户端独立运行，互不干扰。结合策略组使用，可灵活分配节点，实现多客户端管理和流量优化。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -444,16 +444,16 @@ opkg install v2ray-core
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/free-ssr-node-2026-9-9.htm" title="9月9日 | 最新V2ray节点/Clash节点/Trojan节点/Shadowrocket节点/SSR节点/Singbox节点高速免费节点地址，最高速度18M/S，便宜机场推荐">9月9日 | 最新V2ray节点/Clash节点/Trojan节点/Shadowrocket节点/SSR节点/Singbox节点高速免费节点地址，最高速度18M/S，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-24-free-clash.htm" title="9月24日 | 最新V2ray节点/SSR节点/Shadowrocket节点/Clash节点/Singbox节点/Trojan节点高速免费节点地址，最高速度22M/S，便宜机场推荐">9月24日 | 最新V2ray节点/SSR节点/Shadowrocket节点/Clash节点/Singbox节点/Trojan节点高速免费节点地址，最高速度22M/S，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/clash-windows-2026-9-29.htm" title="9月29日 | 最新Trojan节点/SSR节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点高速免费节点地址，最高速度18.1M/S，便宜机场推荐">9月29日 | 最新Trojan节点/SSR节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点高速免费节点地址，最高速度18.1M/S，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-ssr-node-2026-9-25.htm" title="9月25日 | 最新SSR节点/Trojan节点/Singbox节点/Clash节点/V2ray节点/Shadowrocket节点高速免费节点地址，最高速度21.7M/S，便宜机场推荐">9月25日 | 最新SSR节点/Trojan节点/Singbox节点/Clash节点/V2ray节点/Shadowrocket节点高速免费节点地址，最高速度21.7M/S，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-clash-subscribe-2026-9-13.htm" title="9月13日 | 最新Singbox节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点/Trojan节点高速免费节点地址，最高速度20.1M/S，便宜机场推荐">9月13日 | 最新Singbox节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点/Trojan节点高速免费节点地址，最高速度20.1M/S，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-18-clash-node-daily-updates.htm" title="9月18日 | 最新V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Trojan节点/Singbox节点高速免费节点地址，最高速度22.6M/S，便宜机场推荐">9月18日 | 最新V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Trojan节点/Singbox节点高速免费节点地址，最高速度22.6M/S，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-10-7.htm" title="10月7日 | 最新V2ray节点/Singbox节点/Shadowrocket节点/Clash节点/Trojan节点/SSR节点高速免费节点地址，最高速度21.1M/S，便宜机场推荐">10月7日 | 最新V2ray节点/Singbox节点/Shadowrocket节点/Clash节点/Trojan节点/SSR节点高速免费节点地址，最高速度21.1M/S，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-10-2-free-shadowrocket-node.htm" title="10月2日 | 最新Clash节点/Trojan节点/Singbox节点/Shadowrocket节点/V2ray节点/SSR节点高速免费节点地址，最高速度22.4M/S，便宜机场推荐">10月2日 | 最新Clash节点/Trojan节点/Singbox节点/Shadowrocket节点/V2ray节点/SSR节点高速免费节点地址，最高速度22.4M/S，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-6-free-ssr-subscribe.htm" title="9月6日 | 最新Singbox节点/Shadowrocket节点/SSR节点/V2ray节点/Trojan节点/Clash节点高速免费节点地址，最高速度18.1M/S，便宜机场推荐">9月6日 | 最新Singbox节点/Shadowrocket节点/SSR节点/V2ray节点/Trojan节点/Clash节点高速免费节点地址，最高速度18.1M/S，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-ssr-node-2026-9-3.htm" title="9月3日 | 最新SSR节点/V2ray节点/Trojan节点/Clash节点/Shadowrocket节点/Singbox节点高速免费节点地址，最高速度20.2M/S，便宜机场推荐">9月3日 | 最新SSR节点/V2ray节点/Trojan节点/Clash节点/Shadowrocket节点/Singbox节点高速免费节点地址，最高速度20.2M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-ssr-node-2026-9-5.htm" title="9月5日 | 最新Singbox节点/Shadowrocket节点/Clash节点/Trojan节点/V2ray节点/SSR节点高速免费节点地址，最高速度21.1M/S，便宜机场推荐">9月5日 | 最新Singbox节点/Shadowrocket节点/Clash节点/Trojan节点/V2ray节点/SSR节点高速免费节点地址，最高速度21.1M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-10-free-ssr-subscribe.htm" title="10月10日 | 最新Singbox节点/SSR节点/Clash节点/Trojan节点/Shadowrocket节点/V2ray节点高速免费节点地址，最高速度18.4M/S，便宜机场推荐">10月10日 | 最新Singbox节点/SSR节点/Clash节点/Trojan节点/Shadowrocket节点/V2ray节点高速免费节点地址，最高速度18.4M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-14-free-shadowrocket-node.htm" title="9月14日 | 最新Trojan节点/Shadowrocket节点/V2ray节点/Singbox节点/Clash节点/SSR节点高速免费节点地址，最高速度20.6M/S，便宜机场推荐">9月14日 | 最新Trojan节点/Shadowrocket节点/V2ray节点/Singbox节点/Clash节点/SSR节点高速免费节点地址，最高速度20.6M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-12-node-share.htm" title="9月12日 | 最新Clash节点/Shadowrocket节点/V2ray节点/Trojan节点/Singbox节点/SSR节点高速免费节点地址，最高速度18.5M/S，便宜机场推荐">9月12日 | 最新Clash节点/Shadowrocket节点/V2ray节点/Trojan节点/Singbox节点/SSR节点高速免费节点地址，最高速度18.5M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-26-clash-node.htm" title="9月26日 | 最新SSR节点/Shadowrocket节点/Singbox节点/Trojan节点/V2ray节点/Clash节点高速免费节点地址，最高速度18.6M/S，便宜机场推荐">9月26日 | 最新SSR节点/Shadowrocket节点/Singbox节点/Trojan节点/V2ray节点/Clash节点高速免费节点地址，最高速度18.6M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-8-clash-node.htm" title="9月8日 | 最新Shadowrocket节点/Trojan节点/Clash节点/Singbox节点/V2ray节点/SSR节点高速免费节点地址，最高速度21M/S，便宜机场推荐">9月8日 | 最新Shadowrocket节点/Trojan节点/Clash节点/Singbox节点/V2ray节点/SSR节点高速免费节点地址，最高速度21M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-20-free-shadowrocket-node.htm" title="9月20日 | 最新Shadowrocket节点/Singbox节点/SSR节点/V2ray节点/Trojan节点/Clash节点高速免费节点地址，最高速度19.7M/S，便宜机场推荐">9月20日 | 最新Shadowrocket节点/Singbox节点/SSR节点/V2ray节点/Trojan节点/Clash节点高速免费节点地址，最高速度19.7M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-subscribe-node-2026-9-27.htm" title="9月27日 | 最新Shadowrocket节点/Clash节点/Singbox节点/Trojan节点/V2ray节点/SSR节点高速免费节点地址，最高速度20.8M/S，便宜机场推荐">9月27日 | 最新Shadowrocket节点/Clash节点/Singbox节点/Trojan节点/V2ray节点/SSR节点高速免费节点地址，最高速度20.8M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-2-node-share.htm" title="9月2日 | 最新SSR节点/Shadowrocket节点/V2ray节点/Singbox节点/Trojan节点/Clash节点高速免费节点地址，最高速度20.7M/S，便宜机场推荐">9月2日 | 最新SSR节点/Shadowrocket节点/V2ray节点/Singbox节点/Trojan节点/Clash节点高速免费节点地址，最高速度20.7M/S，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-subscribe-node-2026-10-11.htm" title="10月11日 | 最新Clash节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点/Trojan节点高速免费节点地址，最高速度20.5M/S，便宜机场推荐">10月11日 | 最新Clash节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点/Trojan节点高速免费节点地址，最高速度20.5M/S，便宜机场推荐</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -465,7 +465,7 @@ opkg install v2ray-core
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">7</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
+                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
